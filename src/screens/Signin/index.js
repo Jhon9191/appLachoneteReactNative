@@ -13,7 +13,7 @@ export default function signin() {
   const { user } = useContext(AuthContext);
 
   function handleLogin(){
-    console.log(user.nome);
+    //console.log(user.nome);
   }
 
   const navigation = useNavigation();
