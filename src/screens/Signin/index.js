@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; 
+import { AuthContext } from '../../context/auth';
 
 import styles from './styles.js';
 import imagem from '../../assets/wp.png';
 
 export default function signin() {
+
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
+  const { user } = useContext(AuthContext);
+
+  function handleLogin(){
+    console.log(user.nome);
+  }
+
   const navigation = useNavigation();
   return (
     <View style={styles.re}>
@@ -31,7 +39,7 @@ export default function signin() {
           onChangeText={(text) => setSenha(text)}
           />
 
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 
