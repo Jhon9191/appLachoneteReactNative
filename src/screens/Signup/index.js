@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-
+import { AuthContext } from '../../context/auth';
 import styles from './styles.js';
 import imagem from '../../assets/wp.png';
 
@@ -9,6 +9,8 @@ export default function signin() {
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
   const [senhaIgual, setSenhaIgual] = useState();
+  const { user } = useContext(AuthContext);
+  console.log(user.nome)
   return (
     <View style={styles.re}>
 
