@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
- 
+import { useNavigation } from '@react-navigation/native'; 
 
 import styles from './styles.js';
 import imagem from '../../assets/wp.png';
@@ -35,7 +35,7 @@ export default function signin() {
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity >
+          <TouchableOpacity onPress={()=> navigation.navigate("Signup")}>
             <Text style={styles.buttonCadastrar}>Cadastre-se agora!</Text>
           </TouchableOpacity>
         </View>
