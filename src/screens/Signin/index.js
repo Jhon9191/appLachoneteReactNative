@@ -12,10 +12,6 @@ export default function signin() {
   const [senha, setSenha] = useState();
   const { user } = useContext(AuthContext);
 
-  function handleLogin(){
-    console.log(user.nome);
-  }
-
   const navigation = useNavigation();
   return (
     <View style={styles.re}>
@@ -39,7 +35,7 @@ export default function signin() {
           onChangeText={(text) => setSenha(text)}
           />
 
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 

@@ -1,16 +1,22 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+
 import { AuthContext } from '../../context/auth';
 import styles from './styles.js';
 import imagem from '../../assets/wp.png';
 
+
 export default function signin() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [senha, setSenha] = useState();
-  const [senhaIgual, setSenhaIgual] = useState();
-  const { user } = useContext(AuthContext);
-  console.log(user.nome)
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [senhaIgual, setSenhaIgual] = useState('');
+  const { cadastrar } = useContext(AuthContext);
+
+  function signup(){
+    cadastrar(name, email, senha);
+  }
+
   return (
     <View style={styles.re}>
 
@@ -39,6 +45,7 @@ export default function signin() {
             value={senha}
             onChangeText={(text) => setSenha(text)}
           />
+         
 
           <TextInput style={styles.input}
             placeholder="Password"
@@ -47,7 +54,7 @@ export default function signin() {
             onChangeText={(text) => setSenhaIgual(text)}
           />
 
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={signup}>
             <Text style={styles.buttonText}>Cadastrar</Text>
           </TouchableOpacity>
 
