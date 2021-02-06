@@ -12,6 +12,13 @@ export default function signin() {
   const [senha, setSenha] = useState();
   const { user } = useContext(AuthContext);
 
+<<<<<<< HEAD
+=======
+  function handleLogin(){
+    //console.log(user.nome);
+  }
+
+>>>>>>> c0fb37decc885eda338f6a61799fcda8e7f19bfb
   const navigation = useNavigation();
   return (
     <View style={styles.re}>
