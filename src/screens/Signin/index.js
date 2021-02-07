@@ -26,6 +26,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
           placeholder="Email"
+          placeholderTextColor="#fff"
           autoCapitalize="none"
           autoCorrect={false}
           value={email}
@@ -34,6 +35,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
           placeholder="Password"
+          placeholderTextColor="#fff"
           autoCorrect={false}
           value={senha}
           onChangeText={(text) => setSenha(text)}

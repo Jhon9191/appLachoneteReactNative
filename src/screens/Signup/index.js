@@ -26,6 +26,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
             placeholder="Nome"
+            placeholderTextColor="#fff"
             autoCorrect={false}
             value={name}
             onChangeText={(text) => setName(text)}
@@ -33,7 +34,9 @@ export default function signin() {
 
           <TextInput style={styles.input}
             placeholder="Email"
+            placeholderTextColor="#fff"
             autoCapitalize="none"
+            tvParallaxShiftDistanceY={26}
             autoCorrect={false}
             value={email}
             onChangeText={(text) => setEmail(text)}
@@ -41,6 +44,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
             placeholder="Password"
+            placeholderTextColor="#fff"
             autoCorrect={false}
             value={senha}
             onChangeText={(text) => setSenha(text)}
@@ -49,6 +53,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
             placeholder="Password"
+            placeholderTextColor="#fff"
             autoCorrect={false}
             value={senhaIgual}
             onChangeText={(text) => setSenhaIgual(text)}

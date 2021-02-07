@@ -17,10 +17,12 @@ const styles = StyleSheet.create({
     },
 
     input: {
+        padding: 5 ,
         width: 300,
         height: 50,
-        backgroundColor: "#ffffff",
-        opacity: 15,
+        color: '#fff',
+        backgroundColor: "#000000",
+        opacity: 0.85,
         borderRadius: 10,
         margin: 5
     },
@@ -48,9 +50,6 @@ const styles = StyleSheet.create({
     },
 
     walp: {
-       // width: 1280 ,
-        //height: 720,]
-        backgroundColor: '#222222',
         flex: 1,
         resizeMode: 'cover',
         justifyContent: 'center',
