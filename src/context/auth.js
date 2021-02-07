@@ -22,10 +22,32 @@ function authProvider({ children }) {
                         setUser(data);
                     })
             })
+            .catch((error)=>{
+                alert(error.code);
+            })
+    }
+
+    async function logar(email, password){
+        await firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(async(value)=>{
+            let uid = value.user.uid;
+            await firebase.database().ref('users').child(uid).once('value')
+            .then((snapshot)=>{
+                let data ={
+                    uid : uid,
+                    nome: snapshot.val().nome,
+                    email: value.user.email
+                };
+                setUser(data);
+            })
+        })
+        .catch((error)=>{
+            alert(error.code);
+        })
     }
 
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, cadastrar }}>
+        <AuthContext.Provider value={{ signed: !!user, user, cadastrar, logar }}>
             {children}
         </AuthContext.Provider>
     );

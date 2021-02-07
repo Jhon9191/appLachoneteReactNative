@@ -10,16 +10,13 @@ export default function signin() {
 
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
-  const { user } = useContext(AuthContext);
+  const { logar } = useContext(AuthContext);
+  const navigation = useNavigation();
 
-<<<<<<< HEAD
-=======
-  function handleLogin(){
-    //console.log(user.nome);
+  function handleSignim(){
+    logar(email, senha);
   }
 
->>>>>>> c0fb37decc885eda338f6a61799fcda8e7f19bfb
-  const navigation = useNavigation();
   return (
     <View style={styles.re}>
 
@@ -42,7 +39,7 @@ export default function signin() {
           onChangeText={(text) => setSenha(text)}
           />
 
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={handleSignim}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 
