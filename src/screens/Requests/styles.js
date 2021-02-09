@@ -5,23 +5,32 @@ const styles = StyleSheet.create({
         flex: 1,
         //345D7E
         //E24E42
-        backgroundColor: "#E98000",
-
+        backgroundColor: "#E98000",    
+    },
+    nav: {
+        width: '90%',
+        backgroundColor: '#FFFFFF',
+        borderRadius: 30,
+        margin: 10
+    
+    },
+    
+    menu: {
+        margin: 10,
+        alignSelf: 'flex-end',
+        justifyContent: 'flex-end'
     },
 
-    header: {
+    conteudo: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
 
-    conteudo: {
-        //borderTopLeftRadius: 20,
-        //borderTopRightRadius: 20,
-        borderRadius: 40,
-        margin: 40,
+    cardapido: {
+        borderRadius: 30,
         width: "90%",
-        height: "95%",
+        height: "90%",
         backgroundColor: "#FFFFFF",
         shadowColor: "#000",
         shadowOffset: {
@@ -30,23 +39,9 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.50,
         shadowRadius: 6.68,
-
         elevation: 11,
     },
 
-    nav: {
-        width: '90%',
-        backgroundColor: '#FFFFFF',
-        borderRadius: 30,
-        margin: 10
-
-    },
-
-    menu: {
-        margin: 10,
-        alignSelf: 'flex-end',
-        justifyContent: 'flex-end'
-    }
 });
 
 export default styles;

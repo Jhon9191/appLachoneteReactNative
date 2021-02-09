@@ -1,13 +1,24 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, Button } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../context/auth';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import styles from './styles.js';
+import HistoricoList from '../../components/menuItens/index';
 
 export default function Home() {
   const { deslogarUsuario } = useContext(AuthContext);
+  const [historico, useHistorico] = useState([
+    { key: '1', lanche: "X-Tudo", price: '10,00' },
+    { key: '2', lanche: "Mega", price: '15,00' },
+    { key: '3', lanche: "Montana", price: '9,00' },
+    { key: '4', lanche: "Pizza-mussarela", price: '45,00' },
+    { key: '16', lanche: "X-Tudo", price: '10,00' },
+    { key: '26', lanche: "Mega", price: '15,00' },
+    { key: '73', lanche: "Montana", price: '9,00' },
+    { key: '47', lanche: "Pizza-mussarela", price: '45,00' },
+  ]);
   const navigation = useNavigation();
 
   return (
@@ -24,12 +35,20 @@ export default function Home() {
         </View>
       </View>
 
-      <View style={styles.header}>
-
-        <View style={styles.conteudo}></View>
-
+      <View style={styles.conteudo}>
+        <View style={styles.cardapido}>
+          <View style={{padding: 4}}>
+          <FlatList
+           showsVerticalScrollIndicator={false}
+           data={historico}
+           keyExtractor={item => item.key}
+           renderItem={({ item }) => (<HistoricoList data={item}/>)}
+          />
+          </View>
+        </View>
+        {/* <Button title="Deslogar" onPress={()=>deslogarUsuario()}/> */}
       </View>
-      {/* <Button title="Deslogar" onPress={()=>deslogarUsuario()}/> */}
+
     </View>
   );
 }
