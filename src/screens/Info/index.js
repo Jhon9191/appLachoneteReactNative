@@ -5,17 +5,16 @@ import { AuthContext } from '../../context/auth';
 
 import styles from './styles.js';
 
-export default function Wallet() {
+export default function Info() {
 
     const { } = useContext(AuthContext);
     const navigation = useNavigation();
 
     return (
         <View style={styles.background}>
-            <Text style={styles.textSeuPedido}>Seu pedido!</Text>
+            <Text style={styles.text}>Informações</Text>
 
             <View style={styles.conteudo}>
-                <View style={styles.line}></View>
             </View>
 
         </View>
