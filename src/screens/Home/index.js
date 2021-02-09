@@ -9,9 +9,9 @@ export default function Home() {
 const { deslogarUsuario } = useContext(AuthContext);
 
   return (
-    <View >
-        <Text>Home</Text>
-        <Button title="Deslogar" onPress={()=>deslogarUsuario()}/>
+    <View style={styles.background}>
+
+         {/* <Button title="Deslogar" onPress={()=>deslogarUsuario()}/> */}
     </View>
   );
 }

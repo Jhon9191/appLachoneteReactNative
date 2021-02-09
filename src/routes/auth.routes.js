@@ -11,7 +11,7 @@ const TopStack = createMaterialTopTabNavigator();
 
 function authRoutes(){
     return(
-        <TopStack.Navigator>
+        <TopStack.Navigator style={{marginTop:-100}}>
             <TopStack.Screen name="Signin" component={Signin}/>
             <TopStack.Screen name="Signup" component={Signup}/>
         </TopStack.Navigator>
