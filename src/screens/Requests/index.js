@@ -16,7 +16,7 @@ export default function Home() {
 
       <TouchableOpacity style={styles.menu} onPress={()=>navigation.navigate("Info")}>
         <Icon
-          color="#FFFFFF"
+          color="#E98000"
           name="bars"
           size={24}
         />

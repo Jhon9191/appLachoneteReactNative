@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import Requests from '../screens/Requests/index';
 import Wallet from '../screens/Wallet/index';
@@ -13,11 +14,36 @@ const DrawerStack = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Material = createMaterialTopTabNavigator();
 
+const icons = {
+    Cardápio: {
+        name: "list-outline"
+    },
+    Carteira: {
+        name: "wallet-outline"
+    }
+}
+
 function bottonTabs(){
     return(
-        <BottonTabs.Navigator>
-            <BottonTabs.Screen name="Requests" component={Requests} />
-            <BottonTabs.Screen name="Wallet" component={Wallet}/>
+        <BottonTabs.Navigator
+        screenOptions={({route}) => ({
+            tabBarIcon: ({ color, size }) =>{
+                const { name } = icons[route.name];
+                return <Icon name={name} color={color} size={size}/>
+            }
+        })}
+        tabBarOptions={{
+            style:{
+                borderTopColor: "#E98000",
+                backgroundColor: "#E98000",
+                
+            },
+            activeTintColor: "#FFF",
+            inactiveTintColor: "#D9D9D9"
+        }}
+        >
+            <BottonTabs.Screen name="Cardápio" component={Requests} />
+            <BottonTabs.Screen name="Carteira" component={Wallet}/>
         </BottonTabs.Navigator>
     );
 }
