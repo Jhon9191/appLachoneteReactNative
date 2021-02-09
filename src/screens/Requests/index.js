@@ -12,16 +12,23 @@ export default function Home() {
 
   return (
     <View style={styles.background}>
+      <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+        <View style={styles.nav}>
+          <TouchableOpacity style={styles.menu} onPress={() => navigation.navigate("Info")}>
+            <Icon
+              color="#E98000"
+              name="bars"
+              size={24}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
 
+      <View style={styles.header}>
 
-      <TouchableOpacity style={styles.menu} onPress={()=>navigation.navigate("Info")}>
-        <Icon
-          color="#E98000"
-          name="bars"
-          size={24}
-        />
-      </TouchableOpacity>
+        <View style={styles.conteudo}></View>
 
+      </View>
       {/* <Button title="Deslogar" onPress={()=>deslogarUsuario()}/> */}
     </View>
   );

@@ -12,6 +12,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <AuthProvider>
+        <StatusBar barStyle="light-content" hidden={true}/>
         <Routes />
       </AuthProvider>
     </NavigationContainer>

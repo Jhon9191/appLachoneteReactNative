@@ -34,11 +34,11 @@ function bottonTabs(){
         })}
         tabBarOptions={{
             style:{
-                borderTopColor: "#E98000",
-                backgroundColor: "#E98000",
+                borderTopColor: "#eff4f0",
+                backgroundColor: "#eff4f0",
                 
             },
-            activeTintColor: "#FFF",
+            activeTintColor: "#E98000",
             inactiveTintColor: "#D9D9D9"
         }}
         >
