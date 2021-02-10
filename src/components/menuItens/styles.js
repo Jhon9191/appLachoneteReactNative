@@ -63,12 +63,34 @@ const styles = StyleSheet.create({
     },
 
     opcoes:{
-        height: "90%"
+        height: "85%"
     },
 
     botoesFuncoes:{
         height: "10%",
         flexDirection: "row",
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    itensList:{
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row'
+    },itenListText:{
+        fontSize: 20,
+        fontWeight: 'bold',
+    } , 
+
+    line:{
+        backgroundColor: '#d3d3d3',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '95%',
+        height: 1.7,
+        borderRadius: 30,
+        marginBottom: 10
+
     },
 
     botaoClose:{
@@ -88,6 +110,8 @@ const styles = StyleSheet.create({
     },textConfirmar:{
         color:"#FFFFFF",
     },
+
+
 
 });
 

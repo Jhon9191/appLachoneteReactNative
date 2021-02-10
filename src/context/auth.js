@@ -4,6 +4,8 @@ import AsyncStorage from '@react-native-community/async-storage'
 import firebase from '../services/firebase';
 export const AuthContext = createContext({});
 
+var Pedidos = [];
+
 function authProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -76,7 +78,7 @@ function authProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, cadastrar, logar, loading, deslogarUsuario }}>
+        <AuthContext.Provider value={{ signed: !!user, user, cadastrar, logar, loading, deslogarUsuario,   }}>
             {children}
         </AuthContext.Provider>
     );
