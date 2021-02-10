@@ -1,10 +1,12 @@
-import React, { useState} from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, TouchableOpacity, Modal, Switch } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import styles from '../menuItens/styles';
+import { AuthContext } from '../../context/auth';
 
 export default function menuItens({ data }) {
+    const { addPedido } = useContext(AuthContext);
     const [visible, setVisible] = useState(false);
 
     const [lanche, setLanche] = useState();
@@ -28,16 +30,17 @@ export default function menuItens({ data }) {
     }
 
     function confirmarPedido() {
-      let acrecimos = {
-          queijo: queijo,
-          bife: bife
-      }
-      let dataParcial = {
-          nome: lanche,
-          price: price,
-          acrecimos: acrecimos
-      }
-      console.log(dataParcial)
+        let acrecimos = {
+            queijo: queijo,
+            bife: bife
+        }
+        let dadosPedido = {
+            nome: lanche,
+            preco: price,
+            acrecimos: acrecimos
+        }
+        addNovoPedido(dadosPedido);
+        setVisible(false);
     }
 
     return (

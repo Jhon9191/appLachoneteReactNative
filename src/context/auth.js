@@ -77,8 +77,13 @@ function authProvider({ children }) {
         })
     }
 
+    function addPedido(data){
+        Pedidos.push(data);
+        console.log(Pedidos)
+    }
+
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, cadastrar, logar, loading, deslogarUsuario,   }}>
+        <AuthContext.Provider value={{ signed: !!user, user, cadastrar, logar, loading, deslogarUsuario, addPedido  }}>
             {children}
         </AuthContext.Provider>
     );
