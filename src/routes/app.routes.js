@@ -14,45 +14,45 @@ const DrawerStack = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Material = createMaterialTopTabNavigator();
 
-const icons = {
-    Cardápio: {
-        name: "list-outline"
-    },
-    Carteira: {
-        name: "wallet-outline"
-    }
-}
-
-function bottonTabs(){
-    return(
-        <BottonTabs.Navigator
-        screenOptions={({route}) => ({
-            tabBarIcon: ({ color, size }) =>{
-                const { name } = icons[route.name];
-                return <Icon name={name} color={color} size={size}/>
-            }
-        })}
-        tabBarOptions={{
-            style:{
-                borderTopColor: "#eff4f0",
-                backgroundColor: "#eff4f0",
+// const icons = {
+//     Cardápio: {
+//         name: "list-outline"
+//     },
+//     Carteira: {
+//         name: "wallet-outline"
+//     }
+// }
+// function bottonTabs(){
+//     return(
+//         <BottonTabs.Navigator
+//         screenOptions={({route}) => ({
+//             tabBarIcon: ({ color, size }) =>{
+//                 const { name } = icons[route.name];
+//                 return <Icon name={name} color={color} size={size}/>
+//             }
+//         })}
+//         tabBarOptions={{
+//             style:{
+//                 borderTopColor: "#eff4f0",
+//                 backgroundColor: "#eff4f0",
                 
-            },
-            activeTintColor: "#E98000",
-            inactiveTintColor: "#D9D9D9"
-        }}
-        >
-            <BottonTabs.Screen name="Cardápio" component={Requests} />
-            <BottonTabs.Screen name="Carteira" component={Wallet}/>
-        </BottonTabs.Navigator>
-    );
-}
+//             },
+//             activeTintColor: "#E98000",
+//             inactiveTintColor: "#D9D9D9"
+//         }}
+//         >
+//             <BottonTabs.Screen name="Cardápio" component={Requests} />
+            
+//         </BottonTabs.Navigator>
+//     );
+// }
 
 function appRoutes(){
     return(
         <Stack.Navigator >
-            <Stack.Screen options={{headerShown: false}} name="Home" component={bottonTabs}/>
-            <Stack.Screen name="Info" component={Info}/>
+            <Stack.Screen options={{headerShown: false}} name="Home" component={Requests}/>
+            <Stack.Screen name="Carteira" component={Wallet}/>
+            <Stack.Screen name="Info" component={Wallet}/>
         </Stack.Navigator>
     );
 }    

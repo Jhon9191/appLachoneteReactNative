@@ -35,6 +35,7 @@ export default function menuItens({ data }) {
             bife: bife
         }
         let dadosPedido = {
+            key: data.key,
             nome: lanche,
             preco: price,
             acrecimos: acrecimos

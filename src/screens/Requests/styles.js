@@ -8,11 +8,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#E98000",    
     },
     nav: {
+        marginTop: 10,
         width: '90%',
+        height: "5%",
         backgroundColor: '#FFFFFF',
         borderRadius: 30,
-        margin: 10
-    
+        elevation: 5
     },
     
     menu: {
@@ -29,17 +30,18 @@ const styles = StyleSheet.create({
 
     cardapido: {
         borderRadius: 30,
+        margin:10,
         width: "90%",
-        height: "90%",
+        height: "80%",
         backgroundColor: "#FFFFFF",
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 5,
         },
-        shadowOpacity: 0.50,
+        shadowOpacity: 2.30,
         shadowRadius: 6.68,
-        elevation: 11,
+        elevation: 5
     },
 
 });
