@@ -45,7 +45,8 @@ export default function Wallet() {
 
             { Pedidos.map(pedidos =>{
                 vetor.push(pedidos.preco)
-            })}
+            }
+)}
 
             
             
