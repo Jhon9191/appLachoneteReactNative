@@ -8,18 +8,17 @@ import BottoNavegation from '../../components/bottonNavegation/index';
 import styles from './styles.js';
 import HistoricoList from '../../components/menuItens/index';
 
-
 export default function Home() {
   const { deslogarUsuario } = useContext(AuthContext);
   const [historico, useHistorico] = useState([
-    { key: '1', lanche: "X-Tudo", price: '10,00' },
-    { key: '2', lanche: "Mega", price: '15,00' },
-    { key: '3', lanche: "Montana", price: '9,00' },
-    { key: '4', lanche: "Pizza-mussarela", price: '45,00' },
-    { key: '5', lanche: "Mega2x", price: '10,00' },
-    { key: '6', lanche: "PIzza-calabresa", price: '15,00' },
-    { key: '7', lanche: "Pizza-4-queijos", price: '9,00' },
-    { key: '8', lanche: "Pizza-mista", price: '45,00' },
+    { key: '1', lanche: "X-Tudo", price: '10.50' },
+    { key: '2', lanche: "Mega", price: '15.00' },
+    { key: '3', lanche: "Montana", price: '9.00' },
+    { key: '4', lanche: "Pizza-mussarela", price: '45.00' },
+    { key: '5', lanche: "Mega2x", price: '10.00' },
+    { key: '6', lanche: "PIzza-calabresa", price: '15.00' },
+    { key: '7', lanche: "Pizza-4-queijos", price: '9.00' },
+    { key: '8', lanche: "Pizza-mista", price: '45.00' },
   ]);
   const navigation = useNavigation();
 

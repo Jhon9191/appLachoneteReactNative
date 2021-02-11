@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from '../menuItens/styles';
 import { AuthContext } from '../../context/auth';
 
+let contador = 0;
+
 export default function menuItens({ data }) {
     const { addPedido } = useContext(AuthContext);
     const [visible, setVisible] = useState(false);
@@ -30,12 +32,13 @@ export default function menuItens({ data }) {
     }
 
     function confirmarPedido() {
+        contador++;
         let acrecimos = {
             queijo: queijo,
             bife: bife
         }
         let dadosPedido = {
-            key: data.key,
+            key: contador,
             nome: lanche,
             preco: price,
             acrecimos: acrecimos

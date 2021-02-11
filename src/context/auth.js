@@ -9,6 +9,11 @@ var Pedidos = [];
 function authProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [h,setH] = useState();
+
+    useEffect(()=>{
+        setH(Pedidos);
+    },[]);
 
     useEffect(() => {
         async function loadStorage() {
@@ -79,11 +84,11 @@ function authProvider({ children }) {
 
     function addPedido(data){
         Pedidos.push(data);
-        console.log(Pedidos)
+        //console.log(Pedidos)
     }
 
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, cadastrar, logar, loading, deslogarUsuario, addPedido, Pedidos }}>
+        <AuthContext.Provider value={{ h, signed: !!user, user, cadastrar, logar, loading, deslogarUsuario, addPedido, Pedidos }}>
             {children}
         </AuthContext.Provider>
     );
