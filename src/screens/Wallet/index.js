@@ -1,18 +1,18 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { View, Text, Button} from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../context/auth';
 
 import styles from './styles.js';
-import HisoricoData from '../../components/menuWallet/index';
-
 
 export default function Wallet() {
 
     const { Pedidos, h } = useContext(AuthContext);
     const navigation = useNavigation();
-    
+    const [he, setHe] = useState();
+
     let vetor = [];
+    let i = 0;
 
     return (
         <View style={styles.background}>
@@ -30,7 +30,7 @@ export default function Wallet() {
                     bife: pedidos.acrecimos.bife,
                     queijo: pedidos.acrecimos.queijo
                 }
-               
+
                 return (
                     <View style={{ margin: 5 }} key={data.key}>
                         <Text>{data.nome}</Text>
@@ -41,15 +41,16 @@ export default function Wallet() {
                 );
             })}
 
-            <Button title="d" onPress={()=> console.log(vetor)}/>
+            <Button title="d" onPress={() => console.log(vetor)} />
 
-            { Pedidos.map(pedidos =>{
-                vetor.push(pedidos.preco)
-            }
-)}
+            {Pedidos.map(pedidos => { vetor.push(pedidos.preco) })}
 
-            
-            
+            {vetor.forEach(pedidos => {
+                i += parseFloat(pedidos);
+            })}
+
+            <Text>{i}</Text>
+
 
         </View>
     );
