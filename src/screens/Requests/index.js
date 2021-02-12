@@ -11,8 +11,8 @@ import HistoricoList from '../../components/menuItens/index';
 export default function Home() {
   const { deslogarUsuario } = useContext(AuthContext);
   const [historico, useHistorico] = useState([
-    { key: '1', lanche: "X-Tudo", price: '10.50' },
-    { key: '2', lanche: "Mega", price: '15.00' },
+    { key: '1', lanche: "X-Tudo", price: '10.99' },
+    { key: '2', lanche: "Mega", price: '14.99' },
     { key: '3', lanche: "Montana", price: '9.00' },
     { key: '4', lanche: "Pizza-mussarela", price: '45.00' },
     { key: '5', lanche: "Mega2x", price: '10.00' },

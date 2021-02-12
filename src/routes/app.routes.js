@@ -51,8 +51,8 @@ function appRoutes(){
     return(
         <Stack.Navigator >
             <Stack.Screen options={{headerShown: false}} name="Cardapio" component={Requests}/>
-            <Stack.Screen name="Carteira" component={Wallet}/>
-            <Stack.Screen name="Info" component={Wallet}/>
+            <Stack.Screen options={{headerShown: false}} name="Carteira" component={Wallet}/>
+            <Stack.Screen options={{headerShown: false}} name="Info" component={Info}/>
         </Stack.Navigator>
     );
 }    
