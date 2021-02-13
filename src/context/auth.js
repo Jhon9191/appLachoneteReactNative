@@ -2,13 +2,15 @@ import React, { createContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-community/async-storage'
 
 import firebase from '../services/firebase';
+import { Alert } from 'react-native';
 export const AuthContext = createContext({});
 
-var Pedidos = [];
 
 function authProvider({ children }) {
+    var Pedidos = [];
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [h, setH] = useState([]);
 
     useEffect(() => {
         async function loadStorage() {
@@ -78,12 +80,15 @@ function authProvider({ children }) {
     }
 
     function addPedido(data){
-        Pedidos.push(data);
-        //console.log(Pedidos)
+        setH([...h, data]);
+    }
+
+    async function removeItem(item){
+        setH(h.filter(p => p !==item))
     }
 
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, cadastrar, logar, loading, deslogarUsuario, addPedido, Pedidos }}>
+        <AuthContext.Provider value={{h, signed: !!user, user, cadastrar, logar, loading, deslogarUsuario, addPedido, Pedidos, removeItem }}>
             {children}
         </AuthContext.Provider>
     );
