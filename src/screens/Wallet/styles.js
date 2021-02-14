@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
     conteudo:{
         justifyContent: 'center',
         alignItems: 'center',
-        height: "5%"
+        height: "5%",
+        margin: 5
     },
 
     textSeuPedido:{
@@ -35,41 +36,22 @@ const styles = StyleSheet.create({
     },
 
     pedidos: {
-        alignItems: 'center',
-        borderRadius: 30,
-        margin:10,
-        width: "90%",
-        height: "80%",
-        backgroundColor: "#FFFFFF",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-        shadowOpacity: 2.30,
-        shadowRadius: 6.68,
-        elevation: 5
-    },alinhamentoItem:{
-        marginTop: 15,
-        flexDirection: "row",
-        width: "90%",
-        padding: 15,
-        backgroundColor: "#FFFFFF",
-        borderRadius: 30,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-        shadowOpacity: 2.30,
-        shadowRadius: 6.68,
-        elevation: 5
-    },item:{
-        width: "85%"
-    }, lixeira:{
-        width: '10%',
         justifyContent: 'center',
         alignItems: 'center',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius:30,
+        margin:10,
+        width: "90%",
+        height: "90%",
+        backgroundColor: "#FFFFFF",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 2.30,
+        shadowRadius: 6.68,
+        elevation: 5
     }
 
 });

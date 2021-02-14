@@ -27,7 +27,7 @@ export default function menuItens({ data }) {
         setVisible(false);
     }
 
-    function addNovoPedido(dataLocal){
+    function addNovoPedido(dataLocal) {
         addPedido(dataLocal);
     }
 
