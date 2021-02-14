@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "flex-start",
         marginTop: 15,
-        marginLeft: 15,
         fontSize: 30,
         fontWeight: "bold"
     },
@@ -52,6 +51,47 @@ const styles = StyleSheet.create({
         shadowOpacity: 2.30,
         shadowRadius: 6.68,
         elevation: 5
+    },
+
+    cardEmpty:{
+        width: 250,
+        height: 250,
+        borderRadius: 30,
+        backgroundColor: "#FFF",
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 2.30,
+        shadowRadius: 6.68,
+        elevation: 11
+    },textEmpty:{
+        fontSize: 26,
+        fontWeight:'bold'
+    },buttonVoltar:{
+        flexDirection: 'row',
+        marginTop: 15,
+        width: 250,
+        height: 60,
+        borderRadius: 25,
+        backgroundColor: "#FFF",
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 2.30,
+        shadowRadius: 6.68,
+        elevation: 11
+    },textVoltar:{
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#E98000'
     }
 
 });
