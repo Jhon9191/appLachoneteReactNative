@@ -9,7 +9,6 @@ import WalletListItem from '../../components/WalletListItem'
 export default function Wallet() {
 
     const { dataPedido, v, user } = useContext(AuthContext);
-    const [valorTotal, setValorTotal] = useState();
     const navigation = useNavigation();
 
     useEffect(()=>{
@@ -47,7 +46,7 @@ export default function Wallet() {
                 :
                 <View style={{ alignItems: 'center' }}>
                     <Text style={styles.textSeuPedido}>Seu pedido {user.nome}!</Text>
-                     <Text style={styles.textSeuPedido}> {v}</Text> 
+                     <Text style={styles.textSeuPedido}> {v.toFixed(2)}</Text> 
                     
                     <View style={styles.pedidos}>
                         <View style={{ margin: 10 }}>

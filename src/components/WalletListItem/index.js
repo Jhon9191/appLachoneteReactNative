@@ -19,8 +19,9 @@ export default function WalletListItem({ data }) {
                 <View style={styles.item}>
                     <Text>{data.nome}</Text>
                     <Text>{data.preco}</Text>
-                    <Text>{data.bife === true ? "Sim" : "Não"}</Text>
-                    <Text>{data.queijo === true ? "Sim" : "Não"}</Text>
+                    <Text>{data.acrecimos.bife == true ? "Bife: Sim" : "Bife: Não"}</Text>
+                    <Text>{data.acrecimos.queijo == true ? "Queijo: Sim" : "Queijo: Não"}</Text>
+                    {console.log(data)}
                 </View>
                 <TouchableOpacity style={styles.lixeira} onPress={() => handleRemove(data)}>
                     <Icon name="trash-outline" size={30} color="#E98000" />
