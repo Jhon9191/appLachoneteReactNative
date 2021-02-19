@@ -37,10 +37,18 @@ export default function menuItens({ data }) {
             queijo: queijo,
             bife: bife
         }
+        let queijoValue = 0;
+        if(queijo == true){
+            queijoValue = 2.00;
+        }
+        let bifeValue = 0;
+        if(bife == true){
+            bifeValue = 2.00;
+        }
         let dadosPedido = {
             key: contador,
             nome: lanche,
-            preco: price,
+            preco: parseFloat(price) + queijoValue + bifeValue,
             acrecimos: acrecimos
         }
         addNovoPedido(dadosPedido);
