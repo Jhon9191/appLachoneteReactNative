@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons'
 
+import Home from '../screens/Home/index';
 import Requests from '../screens/Requests/index';
 import Wallet from '../screens/Wallet/index';
 import Info from '../screens/Info/index';
@@ -50,6 +51,7 @@ const Material = createMaterialTopTabNavigator();
 function appRoutes(){
     return(
         <Stack.Navigator >
+            <Stack.Screen options={{headerShown: false}} name="Home" component={Home}/>
             <Stack.Screen options={{headerShown: false}} name="Cardapio" component={Requests}/>
             <Stack.Screen options={{headerShown: false}} name="Carteira" component={Wallet}/>
             <Stack.Screen options={{headerShown: false}} name="Info" component={Info}/>
