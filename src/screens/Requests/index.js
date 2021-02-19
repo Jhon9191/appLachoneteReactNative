@@ -55,16 +55,8 @@ export default function Home() {
     //   </View>
 
     // </View>
-    <View style={{ flex: 1, alignItems: 'center', backgroundColor: "#E98000"}}>
-
-      <View style={styles.nav}>
-        <TouchableOpacity style={styles.menu} onPress={() => navigation.navigate("Info")}>
-          <Icon
-            color="#E98000"
-            name="bars"
-            size={24} />
-        </TouchableOpacity>
-      </View>
+    <View style={{ flex: 1, alignItems: 'center', backgroundColor: "#E98000" }}>
+      <BottoNavegation />
 
       <View style={styles.cardapido}>
         <View style={{ padding: 4 }}>
@@ -77,7 +69,6 @@ export default function Home() {
         </View>
       </View>
 
-      <BottoNavegation />
 
 
     </View>
