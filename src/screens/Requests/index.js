@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../context/auth';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import BottoNavegation from '../../components/bottonNavegation/index';
 import styles from './styles.js';
 import HistoricoList from '../../components/menuItens/index';
 
@@ -55,8 +54,7 @@ export default function Home() {
     //   </View>
 
     // </View>
-    <View style={{ flex: 1, alignItems: 'center', backgroundColor: "#E98000" }}>
-      <BottoNavegation />
+    <View style={styles.background}>
 
       <View style={styles.cardapido}>
         <View style={{ padding: 4 }}>
@@ -69,7 +67,16 @@ export default function Home() {
         </View>
       </View>
 
-
+      <TouchableOpacity
+        style={styles.buttonVoltar}
+        onPress={() => navigation.navigate("Home")}>
+        <Icon
+          name="arrow-left"
+          size={40}
+          color="#E98000"
+        />
+        <Text style={styles.textVoltar}>Voltar</Text>
+      </TouchableOpacity>
 
     </View>
   );

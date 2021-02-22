@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
         shadowRadius: 6.68,
         elevation: 11
     },textVoltar:{
+        marginStart: 15,
         fontSize: 24,
         fontWeight: 'bold',
         color: '#E98000'

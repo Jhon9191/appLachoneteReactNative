@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { AuthContext } from '../../context/auth';
 import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import styles from './styles.js';
 import WalletListItem from '../../components/WalletListItem'
@@ -26,7 +26,7 @@ export default function Wallet() {
                     <View style={styles.cardEmpty}>
                         <Text style={styles.textEmpty}>Cesta vazia</Text>
                         <Icon
-                            name="cart-off"
+                            name="shopping-cart"
                             size={50}
                             color="#E98000"
                         />
@@ -37,7 +37,7 @@ export default function Wallet() {
                         onPress={() => navigation.navigate("Cardapio")}>
                         <Icon
                             name="arrow-left"
-                            size={50}
+                            size={40}
                             color="#E98000"
                         />
                         <Text style={styles.textVoltar}>Voltar</Text>
