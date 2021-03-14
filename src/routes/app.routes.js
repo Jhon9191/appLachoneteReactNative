@@ -9,7 +9,7 @@ import Home from '../screens/Home/index';
 import Requests from '../screens/Requests/index';
 import Wallet from '../screens/Wallet/index';
 import Info from '../screens/Info/index';
-
+import Profile from '../screens/Profile/index'
 const BottonTabs = createBottomTabNavigator();
 const DrawerStack = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -54,7 +54,8 @@ function appRoutes(){
             <Stack.Screen options={{headerShown: false}} name="Home" component={Home}/>
             <Stack.Screen options={{headerShown: false}} name="Cardapio" component={Requests}/>
             <Stack.Screen options={{headerShown: false}} name="Carteira" component={Wallet}/>
-            <Stack.Screen options={{headerShown: false}} name="Info" component={Info}/>
+            <Stack.Screen options={{headerShown: false}} name="Info" component={Info}/>         
+            <Stack.Screen options={{headerShown: false}} name="Profile" component={Profile}/>
         </Stack.Navigator>
     );
 }    

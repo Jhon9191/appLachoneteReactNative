@@ -10,8 +10,8 @@ export default function Home() {
     const [h, setH] = useState([
         {id: 1, icon: "list-outline", screen: "Cardapio"},
         {id: 2, icon: "wallet-outline", screen: "Carteira" },
-        {id: 3, icon: "information-circle-outline", screen: "Info" },
-        
+        {id: 3, icon: "person-outline", screen: "Profile" },
+        {id: 4, icon: "information-circle-outline", screen: "Info" },
     ]);
     const navigation = useNavigation();
     return (
