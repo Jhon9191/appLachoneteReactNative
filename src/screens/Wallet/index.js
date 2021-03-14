@@ -34,7 +34,7 @@ export default function Wallet() {
 
                     <TouchableOpacity
                         style={styles.buttonVoltar}
-                        onPress={() => navigation.navigate("Cardapio")}>
+                        onPress={() => navigation.navigate("Home")}>
                         <Icon
                             name="arrow-left"
                             size={40}

@@ -9,6 +9,8 @@ import Routes from './src/routes/index';
 
 export default function App() {
 
+  console.disableYellowBox = true;
+
   return (
     <NavigationContainer>
       <AuthProvider>
