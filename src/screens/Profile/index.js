@@ -11,16 +11,18 @@ export default function Profile() {
     const navigation = useNavigation();
 
     return (
-        <View>
+        <View style={styles.background}>
+
             <View style={styles.cardProfile}>
+                <Text>Nome: {user.nome}</Text>
+                <Text>Email: {user.email}</Text>
 
-                <Text>{user.nome}</Text>
-
-                <TouchableOpacity onPress={() => deslogarUsuario()}>
-                    <Text>Sair</Text>
+                <TouchableOpacity style={styles.deslogarUsuario} onPress={() => deslogarUsuario()}>
+                    <Text style={styles.fontButton}>SAIR</Text>
                 </TouchableOpacity>
-
             </View>
+
         </View>
+
     );
 }
