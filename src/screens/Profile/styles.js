@@ -3,27 +3,38 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
 
     background: {
-        flex: 1,
         width: '100%',
         height: '100%',
-        justifyContent: 'center',
         alignItems: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: "#E98000",
     },
 
-    cardProfile:{
+    Profile:{
+        padding: 25,
+        width: "90%",
+        borderRadius: 25,
+        translateY: 100,
         backgroundColor: "#fff",
-        borderRadius: 5,
-        width: "80%",
-        padding: 10
+        elevation: 15
+    },
+
+    card:{
+        height: "50%",
+        width: "100%",
+        borderBottomLeftRadius: 45,
+        borderBottomRightRadius: 45,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "#fff",
     },
 
     deslogarUsuario:{
         marginTop: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#E98666",
-        borderRadius: 5,
+        backgroundColor: "#FEBA67",
+        borderRadius: 35,
         padding: 10
     },fontButton:{
         color: "#fff",

@@ -13,14 +13,26 @@ export default function Profile() {
     return (
         <View style={styles.background}>
 
-            <View style={styles.cardProfile}>
-                <Text>Nome: {user.nome}</Text>
-                <Text>Email: {user.email}</Text>
 
-                <TouchableOpacity style={styles.deslogarUsuario} onPress={() => deslogarUsuario()}>
-                    <Text style={styles.fontButton}>SAIR</Text>
-                </TouchableOpacity>
+            <View style={styles.card}>
+                <View style={styles.Profile}>
+
+                    <Text>Nome: {user.nome}</Text>
+                    <Text>Email: {user.email}</Text>
+
+                    <TouchableOpacity style={styles.deslogarUsuario} onPress={() => deslogarUsuario()}>
+                        <Text style={styles.fontButton}>SAIR</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.deslogarUsuario} >
+                        <Text style={styles.fontButton}>ALTERAR NOME</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
+
+
+
+
 
         </View>
 
