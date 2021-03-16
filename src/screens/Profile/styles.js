@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
 
     background: {
-        flex: 1,
         width: '100%',
         height: '100%',
         alignItems: 'center',
@@ -11,35 +10,45 @@ const styles = StyleSheet.create({
     },
 
     Profile:{
-        padding: 25,
+        padding: "10%",
         width: "90%",
         borderRadius: 25,
         // translateY: '50%',
-        top: "20%",
+        top: "15%",
         backgroundColor: "#fff",
-        elevation: 15
+        elevation: 3
     },
 
     card:{
         height: "50%",
         width: "100%",
-        borderBottomLeftRadius: 100,
-        borderBottomRightRadius: 100,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
         justifyContent: 'flex-end',
         alignItems: 'center',
-        backgroundColor: "#fff",
     },
 
     deslogarUsuario:{
-        marginTop: 10,
+        marginTop: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#f87b0f",
+        backgroundColor: "#d63b5d",
         borderRadius: 35,
         padding: 10
     },fontButton:{
         color: "#fff",
         fontWeight: "bold"
+    },
+
+    containerButtons:{
+        padding: 20,
+        borderTopLeftRadius: 25,
+        borderTopRightRadius: 25,
+        top: '20%', 
+        backgroundColor: "#fff", 
+        width: "90%",
+        height: "50%", 
+        elevation: 3
     }
 
 });
