@@ -12,8 +12,8 @@ export default function Profile() {
 
     return (
         <View style={styles.background}>
-            <LinearGradient colors={['#FEBA67', '#f87b0f', '#d63b5d']} style={styles.card}>
-                <Text>Perfil</Text>
+            <LinearGradient colors={['#f87b0f', '#f87b0f']} style={styles.card}>
+                <Text style={styles.ProfileTitle}>Seu perfil</Text>
                 <View style={styles.Profile}>
                     <Text>Nome: {user.nome}</Text>
                     <Text>Email: {user.email}</Text>

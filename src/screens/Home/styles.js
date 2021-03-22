@@ -27,7 +27,14 @@ const styles = StyleSheet.create({
     space: {
         width: '50%',
         padding: 12
-    }
+    },
+
+    msgUser:{
+        color: "#fff",
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20
+    },
 
 
 });

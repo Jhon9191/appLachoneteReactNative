@@ -49,8 +49,12 @@ const styles = StyleSheet.create({
         width: "90%",
         height: "50%", 
         elevation: 3
-    }
+    },
 
+    ProfileTitle:{
+        color: '#fff',
+        fontSize: 26
+    },
 });
 
 export default styles;
