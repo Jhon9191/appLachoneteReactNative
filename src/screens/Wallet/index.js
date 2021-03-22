@@ -11,13 +11,11 @@ export default function Wallet() {
     const { dataPedido, v, user } = useContext(AuthContext);
     const navigation = useNavigation();
 
-    useEffect(()=>{
-    },[dataPedido]);
+    useEffect(() => {
+    }, [dataPedido]);
 
     return (
-
         <View style={styles.background}>
-
 
             { dataPedido.length == 0
                 ?
@@ -44,20 +42,44 @@ export default function Wallet() {
                     </TouchableOpacity>
                 </View>
                 :
-                <View style={{ alignItems: 'center' }}>
-                    <Text style={styles.textSeuPedido}>Seu pedido {user.nome}!</Text>
-                     <Text style={styles.textSeuPedido}> {v.toFixed(2)}</Text> 
-                    
+                <View style={styles.container}>
+
                     <View style={styles.pedidos}>
-                        <View style={{ margin: 10 }}>
+                        <View style={{ padding: 4 }}>
                             <FlatList
                                 showsVerticalScrollIndicator={false}
                                 data={dataPedido}
                                 keyExtractor={item => item.key.toString()}
-                                renderItem={({ item }) => (<WalletListItem data={item} />)}
-                            />
+                                renderItem={({ item }) => (<WalletListItem data={item} />)} />
                         </View>
                     </View>
+
+
+                    <View style={{ width: '100%', flexDirection: "row", justifyContent: 'space-evenly' }}>
+                        <TouchableOpacity
+                            style={styles.buttonVoltar}
+                            onPress={() => navigation.navigate("Cardapio")}>
+                            <Icon
+                                name="arrow-left"
+                                size={20}
+                                color="#E98000"
+                            />
+                            <Text style={styles.textVoltar}>Voltar</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={styles.buttonVoltar}>
+                            <Text style={styles.textVoltar}>Confirmar</Text>
+                        </TouchableOpacity>
+                    </View>
+
+
+
+                    {/* <View style={{ height: "20%" }}>
+                        <Text style={styles.textSeuPedido}>Seu pedido {user.nome}!</Text>
+                        <Text style={styles.textSeuPedido}> {v.toFixed(2)}</Text>
+                    </View> */}
+
                 </View>
             }
 

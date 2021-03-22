@@ -9,11 +9,6 @@ const styles = StyleSheet.create({
         //E24E42
         backgroundColor: "#E98000",    
     },
-    conteudo: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
 
     cardapido: {
         borderRadius: 30,
@@ -29,7 +24,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 2.30,
         shadowRadius: 6.68,
         elevation: 5
-    },buttonVoltar:{
+    },
+    buttonVoltar:{
         flexDirection: 'row',
         marginTop: 15,
         width: "40%",
