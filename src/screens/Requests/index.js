@@ -67,16 +67,29 @@ export default function Home() {
         </View>
       </View>
 
-      <TouchableOpacity
-        style={styles.buttonVoltar}
-        onPress={() => navigation.navigate("Home")}>
-        <Icon
-          name="arrow-left"
-          size={20}
-          color="#E98000"
-        />
-        <Text style={styles.textVoltar}>Voltar</Text>
-      </TouchableOpacity>
+      <View style={{width: '100%',flexDirection: "row", justifyContent: 'space-evenly'}}>
+        <TouchableOpacity
+          style={styles.buttonVoltar}
+          onPress={() => navigation.navigate("Home")}>
+          <Icon
+            name="arrow-left"
+            size={20}
+            color="#E98000"
+          />
+          <Text style={styles.textVoltar}>Voltar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.buttonVoltar}
+          onPress={() => navigation.navigate("Carteira")}>
+            <Text style={styles.textVoltar}>Cesta</Text>
+          <Icon
+            name="arrow-right"
+            size={20}
+            color="#E98000"
+          />
+        </TouchableOpacity>
+      </View>
 
     </View>
   );

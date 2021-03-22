@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
     },buttonVoltar:{
         flexDirection: 'row',
         marginTop: 15,
-        width: 250,
+        width: "40%",
         height: 60,
-        borderRadius: 25,
+        borderRadius: 5,
         backgroundColor: "#FFF",
         justifyContent: 'center',
         alignItems: 'center',
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         shadowRadius: 6.68,
         elevation: 11
     },textVoltar:{
-        marginStart: 15,
+        margin: 15,
         fontSize: 24,
         fontWeight: 'bold',
         color: '#E98000'
