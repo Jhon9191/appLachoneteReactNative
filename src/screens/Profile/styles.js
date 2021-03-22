@@ -6,55 +6,57 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         alignItems: 'center',
-        justifyContent: 'flex-start',
-    },
-
-    Profile:{
-        padding: "10%",
-        width: "90%",
-        borderRadius: 25,
-        // translateY: '50%',
-        top: "15%",
-        backgroundColor: "#fff",
-        elevation: 3
-    },
-
-    card:{
-        height: "50%",
-        width: "100%",
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-    },
-
-    deslogarUsuario:{
-        marginTop: 5,
         justifyContent: 'center',
+        backgroundColor: "#1F1F1F"
+    },
+
+    buttons:{
+        backgroundColor: "#343438",
+        borderRadius: 5,
+        width: '70%',
         alignItems: 'center',
+        flexDirection: 'row',
+        padding: 10  
+    },
+
+    buttonsDeslogar:{
+        marginTop: 10,
         backgroundColor: "#d63b5d",
-        borderRadius: 35,
-        padding: 10
-    },fontButton:{
+        borderRadius: 5,
+        width: '70%',
+        alignItems: 'center',
+        flexDirection: 'row',
+        padding: 10  
+    },
+
+    profileContainerPhoto:{
+        alignItems: 'center',
+        justifyContent: 'center',
+    }, positionIcon:{
+        left: "10%",
+        bottom: "10%",
+        backgroundColor: "#FFF",
+        borderRadius: 50,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        // borderColor: '#fff',
+        // borderWidth: 2
+    } ,
+
+    profilePhoto:{
+        width: 150,
+        height: 150,
+        borderRadius: 100
+    },
+
+    profileText:{
         color: "#fff",
-        fontWeight: "bold"
+        fontSize: 16,
+        fontWeight: "600",
+        margin: 4
     },
 
-    containerButtons:{
-        padding: 20,
-        borderTopLeftRadius: 25,
-        borderTopRightRadius: 25,
-        top: '20%', 
-        backgroundColor: "#fff", 
-        width: "90%",
-        height: "50%", 
-        elevation: 3
-    },
-
-    ProfileTitle:{
-        color: '#fff',
-        fontSize: 26
-    },
 });
 
 export default styles;
