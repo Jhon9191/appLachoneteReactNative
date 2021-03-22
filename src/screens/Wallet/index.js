@@ -37,7 +37,7 @@ export default function Wallet() {
                         onPress={() => navigation.navigate("Home")}>
                         <Icon
                             name="arrow-left"
-                            size={40}
+                            size={20}
                             color="#E98000"
                         />
                         <Text style={styles.textVoltar}>Voltar</Text>
