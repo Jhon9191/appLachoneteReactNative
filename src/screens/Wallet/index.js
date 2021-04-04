@@ -9,14 +9,20 @@ import Firebase from '../../services/firebase';
 
 import styles from './styles.js';
 import WalletListItem from '../../components/WalletListItem'
+
 export default function Wallet() {
-    const { dataPedido, v, user } = useContext(AuthContext);
+    const { dataPedido, user, confirmarPedido } = useContext(AuthContext);
     const navigation = useNavigation();
+
+
     const handleCreatePedido =  async () =>{
         let uid = await Firebase.auth().currentUser.uid;
         let key = await Firebase.database().ref('Pedidos').child(user.uid).push().key;
         Firebase.database().ref("Pedidos").child(user.uid).child(key).set({
             lanches: {dataPedido}
+        }).then(()=>{
+            console.log("Pedido feito")
+            confirmarPedido()
         })
     }
 

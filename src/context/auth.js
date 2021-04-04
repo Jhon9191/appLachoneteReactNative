@@ -99,8 +99,24 @@ function authProvider({ children }) {
         setDataPedidos(dataPedido.filter(p => p !==item));
     }
 
+    const confirmarPedido = () => {
+        setDataPedidos([]);
+    }
+
     return (
-        <AuthContext.Provider value={{porValor, dataPedido, v, signed: !!user, user, cadastrar, logar, loading, deslogarUsuario, addPedido, removeItem }}>
+        <AuthContext.Provider value={{
+            porValor, 
+            dataPedido, 
+            signed: !!user, 
+            user, 
+            cadastrar, 
+            logar, 
+            loading, 
+            deslogarUsuario, 
+            addPedido, 
+            removeItem,
+            confirmarPedido
+            }}>
             {children}
         </AuthContext.Provider>
     );
