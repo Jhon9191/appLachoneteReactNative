@@ -2,14 +2,23 @@ import React, { useContext, useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { AuthContext } from '../../context/auth';
 import { useNavigation } from '@react-navigation/native';
+import { format } from 'date-fns'
 import Icon from 'react-native-vector-icons/FontAwesome'
+
+import Firebase from '../../services/firebase';
 
 import styles from './styles.js';
 import WalletListItem from '../../components/WalletListItem'
 export default function Wallet() {
-
     const { dataPedido, v, user } = useContext(AuthContext);
     const navigation = useNavigation();
+    const handleCreatePedido =  async () =>{
+        let uid = await Firebase.auth().currentUser.uid;
+        let key = await Firebase.database().ref('Pedidos').child(user.uid).push().key;
+        Firebase.database().ref("Pedidos").child(user.uid).child(key).set({
+            lanches: {dataPedido}
+        })
+    }
 
     useEffect(() => {
     }, [dataPedido]);
@@ -67,7 +76,8 @@ export default function Wallet() {
                             <Text style={styles.textVoltar}>Voltar</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
+                        <TouchableOpacity 
+                            onPress={handleCreatePedido}
                             style={styles.buttonVoltar}>
                             <Text style={styles.textVoltar}>Confirmar</Text>
                         </TouchableOpacity>

@@ -91,7 +91,7 @@ function authProvider({ children }) {
         setV(i);
     },[dataPedido]);
 
-    async function addPedido(data){
+    function addPedido(data){
         setDataPedidos([...dataPedido, data]);
     }
 
