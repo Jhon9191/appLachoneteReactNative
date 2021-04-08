@@ -19,6 +19,15 @@ const styles = StyleSheet.create({
         fontWeight: "bold"
     },
 
+    itemPedido:{
+        backgroundColor: "#E98000", 
+        margin: 3, 
+        padding: 25,
+        borderRadius: 5,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
 
 });
 

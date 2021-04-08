@@ -25,7 +25,7 @@ export default function Home() {
             setMensagem(`Bom dia ${user.nome}!`)
         }else if ( hora >= 12 && hora < 18){
             setMensagem(`Boa tarde ${user.nome}!`)
-        }else if ( hora >= 18 && hora < 6){
+        }else if ( hora >= 18){
             setMensagem(`Boa noite ${user.nome}!`)
         }
     },[])

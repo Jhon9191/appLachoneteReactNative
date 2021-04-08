@@ -1,9 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, FlatList, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../context/auth';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import styles from './styles.js';
+
 import Firebase from '../../services/firebase'
 
 export default function Info() {
@@ -12,7 +14,7 @@ export default function Info() {
     const uid = user && user.uid;
     const [history, setHistory] = useState([]);
     const navigation = useNavigation();
-
+ 
     useEffect(() => {
 
         const loadPedidos = async () => {
@@ -21,7 +23,6 @@ export default function Info() {
                     setHistory([]);
                     snapshot.forEach((item) => {
                         let novo = item.val().lanches.dataPedido
-                        console.log(novo)
                         setHistory(oldArray => [...oldArray, novo])
                     })
                 })
@@ -29,28 +30,27 @@ export default function Info() {
         loadPedidos();
     }, [])
 
-    useEffect(() => {
-        //console.log(history)
-    }, [history])
-
     const navegar = (item) => {
-       setDataPedidoCliente(item);
-       navigation.navigate("Infos")
+        setDataPedidoCliente(item);
+        navigation.navigate("Infos")
     }
 
     return (
         <View style={styles.background}>
-            <Text style={styles.text}>Informações</Text>
+            <Text style={styles.text}>Seus pedidos</Text>
 
-            {history.map((item, index) => {
-                //console.log(item)
-                console.log(index)   
-                return (
-                <TouchableOpacity onPress={() => navegar(item)}>
-                    <Text>Item {index+1}</Text>
-                </TouchableOpacity>
-                )
-            })}
+
+            <FlatList
+                showsVerticalScrollIndicator={false}
+                data={history}
+                keyExtractor={item => item.preco}
+                renderItem={({ item, index }) => (
+                    <TouchableOpacity style={styles.itemPedido} onPress={() => navegar(item)}>
+                        <Text>Pedido {index + 1}</Text>
+                        <Icon name="chevron-forward-outline" size={25} color="#FFFFFF" />
+                    </TouchableOpacity>
+                )}
+            />
 
             <View style={styles.conteudo}>
             </View>

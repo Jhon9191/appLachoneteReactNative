@@ -13,7 +13,7 @@ const Pedido = () => {
     <View >
       {dataPedidoCliente.map((item) => {
         return (
-          <View>
+          <View key={item.key}>
             <Text>{item.nome}</Text>
             <Text>{item.preco}</Text>
           </View>
