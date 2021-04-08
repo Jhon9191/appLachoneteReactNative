@@ -2,22 +2,25 @@ import React, { useEffect, useContext } from 'react';
 import { Text, View, FlatList } from 'react-native';
 import { AuthContext } from '../../context/auth';
 
-const OrderListItem = () => {
+const Pedido = () => {
   const { dataPedidoCliente } = useContext(AuthContext)
 
   useEffect(() => {
-    console.log(dataPedidoCliente)
+    //console.log(dataPedidoCliente)
   }, [])
 
   return (
     <View >
-      {dataPedidoCliente.map((a)=>{
-        return(
-          <Text>Text</Text>
+      {dataPedidoCliente.map((item) => {
+        return (
+          <View>
+            <Text>{item.nome}</Text>
+            <Text>{item.preco}</Text>
+          </View>
         )
       })}
     </View>
   );
 }
 
-export default OrderListItem;
+export default Pedido;

@@ -33,6 +33,10 @@ export default function Info() {
         //console.log(history)
     }, [history])
 
+    const navegar = (item) => {
+       setDataPedidoCliente(item);
+       navigation.navigate("Infos")
+    }
 
     return (
         <View style={styles.background}>
@@ -42,7 +46,7 @@ export default function Info() {
                 //console.log(item)
                 console.log(index)   
                 return (
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => navegar(item)}>
                     <Text>Item {index+1}</Text>
                 </TouchableOpacity>
                 )
