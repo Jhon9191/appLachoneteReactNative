@@ -10,6 +10,7 @@ import Requests from '../screens/Requests/index';
 import Wallet from '../screens/Wallet/index';
 import Info from '../screens/Info/index';
 import Profile from '../screens/Profile/index'
+import OrderList from '../components/OrderListItem/index';
 const BottonTabs = createBottomTabNavigator();
 const DrawerStack = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -56,6 +57,7 @@ function appRoutes(){
             <Stack.Screen options={{headerShown: false}} name="Carteira" component={Wallet}/>
             <Stack.Screen options={{headerShown: false}} name="Info" component={Info}/>         
             <Stack.Screen options={{headerShown: false}} name="Profile" component={Profile}/>
+            <Stack.Screen options={{headerShown: false}} name="Infos" component={OrderList}/>
         </Stack.Navigator>
     );
 }    

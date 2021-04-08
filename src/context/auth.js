@@ -13,6 +13,8 @@ function authProvider({ children }) {
     const [total, setTotal] = useState([]);
     const [v, setV] = useState();
 
+    const [dataPedidoCliente, setDataPedidoCliente] = useState([]);
+
     useEffect(() => {
         async function loadStorage() {
             const storageUser = await AsyncStorage.getItem('Auth_user');
@@ -115,7 +117,9 @@ function authProvider({ children }) {
             deslogarUsuario, 
             addPedido, 
             removeItem,
-            confirmarPedido
+            confirmarPedido,
+            dataPedidoCliente, 
+            setDataPedidoCliente
             }}>
             {children}
         </AuthContext.Provider>
