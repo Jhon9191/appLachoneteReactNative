@@ -38,11 +38,11 @@ export default function menuItens({ data }) {
             bife: bife
         }
         let queijoValue = 0;
-        if(queijo == true){
+        if (queijo == true) {
             queijoValue = 2.00;
         }
         let bifeValue = 0;
-        if(bife == true){
+        if (bife == true) {
             bifeValue = 2.00;
         }
         let dadosPedido = {
@@ -62,8 +62,12 @@ export default function menuItens({ data }) {
             <View style={styles.container}>
 
                 <View style={styles.produto}>
-                    <Text style={styles.lanche}>{data.lanche}</Text>
-                    <Text style={styles.price}>{data.price}</Text>
+                    <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={styles.text}>Nome: </Text>
+                        <Text>{data.lanche}</Text>
+                    </View>
+
+                    <Text style={styles.text}>{data.price}</Text>
                 </View>
 
                 <TouchableOpacity
@@ -77,7 +81,9 @@ export default function menuItens({ data }) {
                         />
                     </View>
                 </TouchableOpacity>
+
             </View>
+            <View style={styles.line}></View>
 
 
             <Modal

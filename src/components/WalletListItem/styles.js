@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     }, value:{
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: 'bold',
         color: "#E98000",
         marginEnd: 5

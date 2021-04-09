@@ -4,11 +4,10 @@ const styles = StyleSheet.create({
 
     container: {
         height: 80,
-        borderRadius: 20,
         flexDirection: 'row',
         marginTop: 15,
         width: "90%",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#FFF",
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -16,7 +15,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.50,
         shadowRadius: 6.68,
-        elevation: 11,
         margin: 10
     },
 
@@ -28,21 +26,15 @@ const styles = StyleSheet.create({
     addButton:{
         backgroundColor: "#d47a0c",
         width: "25%",
-        borderTopRightRadius: 20,
-        borderBottomRightRadius: 20,
+        borderRadius: 7,
         justifyContent: 'center',
         alignItems: 'center'
     },
 
-
-    lanche: {
-        fontSize: 14
-    },
-
-    price: {
-        fontSize: 24,
-        fontWeight: "bold",
-        color: "#E98000"
+    text: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: "#E98000",
     },
 
     acrecimosWindow: {
@@ -83,11 +75,11 @@ const styles = StyleSheet.create({
     } , 
 
     line:{
-        backgroundColor: '#d3d3d3',
+        backgroundColor: '#E98000',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '95%',
-        height: 1.7,
+        width: '90%',
+        height: 1,
         borderRadius: 30,
         marginBottom: 10
 
