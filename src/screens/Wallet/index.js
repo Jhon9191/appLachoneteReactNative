@@ -73,7 +73,7 @@ export default function Wallet() {
                     <View style={{ width: '100%', flexDirection: "row", justifyContent: 'space-evenly' }}>
                         <TouchableOpacity
                             style={styles.buttonVoltar}
-                            onPress={() => navigation.navigate("Cardapio")}>
+                            onPress={() => navigation.navigate("Home")}>
                             <Icon
                                 name="arrow-left"
                                 size={20}

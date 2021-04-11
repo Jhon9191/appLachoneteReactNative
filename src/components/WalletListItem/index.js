@@ -27,7 +27,7 @@ export default function WalletListItem({ data }) {
                     {console.log(data)}
                 </View>
                 <View style={styles.itemValue}>
-                    <Text style={styles.value}>{data.preco}</Text>
+                    <Text style={styles.value}>R$ {data.preco}</Text>
                 </View> 
                 <View style={styles.lixeira}>
                     <TouchableOpacity onPress={() => handleRemove(data)}>

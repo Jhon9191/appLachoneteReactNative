@@ -67,7 +67,7 @@ export default function menuItens({ data }) {
                         <Text>{data.lanche}</Text>
                     </View>
 
-                    <Text style={styles.text}>{data.price}</Text>
+                    <Text style={styles.text}>R$ {data.price}</Text>
                 </View>
 
                 <TouchableOpacity
