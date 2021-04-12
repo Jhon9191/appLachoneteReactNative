@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
         margin: 10
     },item:{
-        width: "65%"    
+        width: "55%"    
     }, lixeira:{
         // backgroundColor: "rgba(0,0,0,1)",
         width: '10%',
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         color: "#E98000",
         marginEnd: 5
     },itemValue:{
-        width: '25%',
+        width: '35%',
         justifyContent: 'center',
         alignItems: 'center',
     }

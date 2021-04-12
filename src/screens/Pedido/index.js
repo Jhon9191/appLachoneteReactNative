@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import { Text, View, FlatList } from 'react-native';
 import { AuthContext } from '../../context/auth';
 
+import styles from './styles.js'
+
 const Pedido = () => {
   const { dataPedidoCliente } = useContext(AuthContext)
 
@@ -10,7 +12,7 @@ const Pedido = () => {
   }, [])
 
   return (
-    <View >
+    <View style={styles.background}>
       {dataPedidoCliente.map((item) => {
         return (
           <View key={item.key}>
