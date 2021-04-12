@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { AuthContext } from '../../context/auth';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { format } from 'date-fns'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -13,7 +13,7 @@ import WalletListItem from '../../components/WalletListItem'
 export default function Wallet() {
     const { dataPedido, user, confirmarPedido, setDataPedidoCliente } = useContext(AuthContext);
     const navigation = useNavigation();
-
+    
 
     const handleCreatePedido =  async () =>{
         let uid = await Firebase.auth().currentUser.uid;
