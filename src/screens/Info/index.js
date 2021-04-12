@@ -37,17 +37,14 @@ export default function Info() {
 
     return (
         <View style={styles.background}>
-            <Text style={styles.text}>Seus pedidos</Text>
-
-
             <FlatList
                 showsVerticalScrollIndicator={false}
                 data={history}
                 keyExtractor={item => item.preco}
                 renderItem={({ item, index }) => (
                     <TouchableOpacity style={styles.itemPedido} onPress={() => navegar(item)}>
-                        <Text>Pedido {index + 1}</Text>
-                        <Icon name="chevron-forward-outline" size={25} color="#FFFFFF" />
+                        <Text style={{color:"#E98000", fontWeight: "bold"}}>Pedido {index + 1}</Text>
+                        <Icon name="chevron-forward-outline" size={25} color="#E98000" />
                     </TouchableOpacity>
                 )}
             />

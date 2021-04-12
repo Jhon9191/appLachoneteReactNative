@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
     background: {
         flex: 1,
+        backgroundColor: "#E98000",
     },
 
     conteudo:{
@@ -20,10 +21,10 @@ const styles = StyleSheet.create({
     },
 
     itemPedido:{
-        backgroundColor: "#E98000", 
-        margin: 3, 
-        padding: 25,
-        borderRadius: 5,
+        backgroundColor: "#ffffff", 
+        margin: 10, 
+        padding: 20,
+        borderRadius: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
