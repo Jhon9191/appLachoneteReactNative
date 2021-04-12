@@ -119,7 +119,9 @@ function authProvider({ children }) {
             removeItem,
             confirmarPedido,
             dataPedidoCliente, 
-            setDataPedidoCliente
+            setDataPedidoCliente,
+            storageUser,
+            setUser
             }}>
             {children}
         </AuthContext.Provider>

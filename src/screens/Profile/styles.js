@@ -11,7 +11,17 @@ const styles = StyleSheet.create({
     },
 
     buttons:{
+        margin: 5,
         backgroundColor: "#343438",
+        borderRadius: 5,
+        width: '70%',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    
+    buttononConfirmar:{
+        margin: 5,
+        backgroundColor: "#32CD32",
         borderRadius: 5,
         width: '70%',
         alignItems: 'center',
@@ -20,7 +30,7 @@ const styles = StyleSheet.create({
     },
 
     buttonsDeslogar:{
-        marginTop: 10,
+        margin: 5,
         backgroundColor: "#d63b5d",
         borderRadius: 5,
         width: '70%',

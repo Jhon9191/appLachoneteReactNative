@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
         // shadowOpacity: 2.30,
         // shadowRadius: 6.68,
         // elevation: 4,
-        borderBottomColor: "#000",
-        borderBottomWidth: 0.5,
+        borderBottomColor: "#E98000",
+        borderBottomWidth: 1,
         margin: 10
     },item:{
         width: "55%"    

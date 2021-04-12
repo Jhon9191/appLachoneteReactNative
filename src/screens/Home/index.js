@@ -29,7 +29,7 @@ export default function Home() {
         }else if ( hora >= 18){
             setMensagem(`Boa noite ${user.nome}!`)
         }
-    },[])
+    },[user])
 
     const navigation = useNavigation();
     return (
