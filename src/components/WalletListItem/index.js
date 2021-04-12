@@ -7,7 +7,7 @@ import styles from './styles';
 
 export default function WalletListItem({ data }) {
 
-    const { removeItem } = useContext(AuthContext);
+    const { removeItem, dataPedidoCliente } = useContext(AuthContext);
 
     async function handleRemove(item) {
         removeItem(item);
@@ -29,12 +29,15 @@ export default function WalletListItem({ data }) {
                 <View style={styles.itemValue}>
                     <Text style={styles.value}>R$ {data.preco}</Text>
                 </View> 
+
+                {dataPedidoCliente === null ? (
                 <View style={styles.lixeira}>
                     <TouchableOpacity onPress={() => handleRemove(data)}>
                         <Icon name="trash-outline" size={30} color="#E98000" />
                     </TouchableOpacity>
 
                 </View>
+                ): (<></>)}
             </View>
         </View>
     );

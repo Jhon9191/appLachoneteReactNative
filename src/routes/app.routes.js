@@ -57,7 +57,7 @@ function appRoutes(){
             <Stack.Screen options={{headerShown: false}} name="Carteira" component={Wallet}/>
             <Stack.Screen options={{headerShown: false}} name="Info" component={Info}/>         
             <Stack.Screen options={{headerShown: false}} name="Profile" component={Profile}/>
-            <Stack.Screen options={{headerShown: false}} name="Infos" component={Pedido}/>
+            <Stack.Screen options={{headerShown: true}} name="Infos" component={Pedido}/>
         </Stack.Navigator>
     );
 }    

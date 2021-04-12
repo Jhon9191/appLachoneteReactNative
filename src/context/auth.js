@@ -13,7 +13,7 @@ function authProvider({ children }) {
     const [total, setTotal] = useState([]);
     const [v, setV] = useState();
 
-    const [dataPedidoCliente, setDataPedidoCliente] = useState([]);
+    const [dataPedidoCliente, setDataPedidoCliente] = useState(null);
 
     useEffect(() => {
         async function loadStorage() {

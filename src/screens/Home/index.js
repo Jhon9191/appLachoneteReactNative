@@ -10,7 +10,7 @@ import styles from './styles';
 const data = new Date();
 
 export default function Home() {
-    const { user } = useContext(AuthContext)
+    const { user, setDataPedidoCliente } = useContext(AuthContext)
     const [hora, setHora] = useState(new Date().getHours());
     const [menssagem, setMensagem] = useState()
     const [h, setH] = useState([
@@ -21,6 +21,7 @@ export default function Home() {
     ]);
 
     useEffect(()=>{
+        setDataPedidoCliente(null);
         if(hora >= 6 && hora < 12){
             setMensagem(`Bom dia ${user.nome}!`)
         }else if ( hora >= 12 && hora < 18){

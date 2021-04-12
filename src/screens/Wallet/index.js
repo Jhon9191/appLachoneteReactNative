@@ -11,7 +11,7 @@ import styles from './styles.js';
 import WalletListItem from '../../components/WalletListItem'
 
 export default function Wallet() {
-    const { dataPedido, user, confirmarPedido } = useContext(AuthContext);
+    const { dataPedido, user, confirmarPedido, setDataPedidoCliente } = useContext(AuthContext);
     const navigation = useNavigation();
 
 
@@ -25,6 +25,10 @@ export default function Wallet() {
             confirmarPedido()
         })
     }
+
+    useEffect(()=>{
+        setDataPedidoCliente(null)
+    },[]);
 
     useEffect(() => {
     }, [dataPedido]);
