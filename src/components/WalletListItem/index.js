@@ -8,7 +8,7 @@ import styles from './styles';
 export default function WalletListItem({ data }) {
 
     const route = useRoute();
-    const { removeItem, dataPedidoCliente } = useContext(AuthContext);
+    const { removeItem } = useContext(AuthContext);
 
     async function handleRemove(item) {
         removeItem(item);

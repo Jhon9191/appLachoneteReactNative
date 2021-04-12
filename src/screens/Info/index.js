@@ -32,7 +32,7 @@ export default function Info() {
 
     const navegar = (item) => {
         setDataPedidoCliente(item);
-        navigation.navigate("Infos")
+        navigation.navigate("Detalhes")
     }
 
     return (
