@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.50,
         shadowRadius: 6.68,
-        elevation: 11,
+        elevation: 5,
     },
 
     opcoes:{
@@ -75,13 +75,12 @@ const styles = StyleSheet.create({
     } , 
 
     line:{
-        backgroundColor: '#E98000',
+
         justifyContent: 'center',
         alignItems: 'center',
         width: '90%',
-        height: 1,
-        borderRadius: 30,
-        marginBottom: 10
+        borderBottomColor: "#E98000",
+        borderBottomWidth: 1,
 
     },
 
