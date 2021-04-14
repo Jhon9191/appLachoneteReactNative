@@ -21,7 +21,20 @@ export default function Profile() {
     const uid = user && user.uid;
     const navigation = useNavigation();
 
-    const [filePath, setFilePath] = useState("https://www.construtoracesconetto.com.br/wp-content/uploads/2020/03/blank-profile-picture-973460_640.png");
+    const [filePath, setFilePath] = useState("");
+
+    const editName = async () => {
+        await Firebase.database().ref("users").child(uid).update({
+            nome: newName
+        }).then(() =>{
+            let data = {
+                ...user,
+                nome: newName
+            }
+            setUser(data);
+            storageUser(data);
+        })
+    }
 
     const requestCameraPermission = async () => {
         if (Platform.OS === 'android') {
@@ -73,14 +86,18 @@ export default function Profile() {
         if (isStoragePermitted) {
         launchImageLibrary(options, (response) => {
           setFilePath(response);
+          console.log(response);
         })}
       };
 
     return (
         <View style={styles.background}>
-
             <View style={styles.profileContainerPhoto}>
-                <Image style={styles.profilePhoto} source={{ uri: `${filePath.uri}` }} />
+                {filePath === "" ? (
+                    <Image style={styles.profilePhoto} source={{uri: "https://www.construtoracesconetto.com.br/wp-content/uploads/2020/03/blank-profile-picture-973460_640.png" }} />
+                ):(
+                <Image style={styles.profilePhoto} source={{uri: `${filePath.uri}`}} />
+                )}
                 <TouchableOpacity style={styles.positionIcon}
                 onPress={() =>chooseFile('photo')}>
                     {/* <View style={{width:'30%'}}></View> */}
