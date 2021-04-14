@@ -38,7 +38,8 @@ function authProvider({ children }) {
                         let data = {
                             uid: uid,
                             nome: nome,
-                            email: value.user.email
+                            email: value.user.email, 
+                            avatar: null
                         };
                         setUser(data);
                         storageUser(data);
@@ -59,7 +60,8 @@ function authProvider({ children }) {
                         let data = {
                             uid: uid,
                             nome: snapshot.val().nome,
-                            email: value.user.email
+                            email: value.user.email, 
+                            avatar: snapshot.val().avatar
                         };
                         setUser(data);
                         storageUser(data);

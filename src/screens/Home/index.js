@@ -21,6 +21,7 @@ export default function Home() {
     ]);
 
     useEffect(()=>{
+        console.log(user)
         setDataPedidoCliente(null);
         if(hora >= 6 && hora < 12){
             setMensagem(`Bom dia ${user.nome}!`)

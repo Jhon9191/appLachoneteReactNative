@@ -1,6 +1,8 @@
-import React, { useState, useContext } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet, Platform,
-    PermissionsAndroid } from 'react-native';
+import React, { useState, useContext, useEffect } from 'react';
+import {
+    View, Text, Image, TextInput, TouchableOpacity, StyleSheet, Platform,
+    PermissionsAndroid
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../context/auth';
 // import LinearGradient from 'react-native-linear-gradient'
@@ -22,11 +24,12 @@ export default function Profile() {
     const navigation = useNavigation();
 
     const [filePath, setFilePath] = useState("");
+    const [uri, setUri] = useState("");
 
     const editName = async () => {
         await Firebase.database().ref("users").child(uid).update({
             nome: newName
-        }).then(() =>{
+        }).then(() => {
             let data = {
                 ...user,
                 nome: newName
@@ -38,68 +41,82 @@ export default function Profile() {
 
     const requestCameraPermission = async () => {
         if (Platform.OS === 'android') {
-          try {
-            const granted = await PermissionsAndroid.request(
-              PermissionsAndroid.PERMISSIONS.CAMERA,
-              {
-                title: 'Camera Permission',
-                message: 'App needs camera permission',
-              },
-            );
-            // If CAMERA Permission is granted
-            return granted === PermissionsAndroid.RESULTS.GRANTED;
-          } catch (err) {
-            console.warn(err);
-            return false;
-          }
+            try {
+                const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.CAMERA,
+                    {
+                        title: 'Camera Permission',
+                        message: 'App needs camera permission',
+                    },
+                );
+                // If CAMERA Permission is granted
+                return granted === PermissionsAndroid.RESULTS.GRANTED;
+            } catch (err) {
+                console.warn(err);
+                return false;
+            }
         } else return true;
-      };
-    
-      const requestExternalWritePermission = async () => {
+    };
+
+    const requestExternalWritePermission = async () => {
         if (Platform.OS === 'android') {
-          try {
-            const granted = await PermissionsAndroid.request(
-              PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-              {
-                title: 'External Storage Write Permission',
-                message: 'App needs write permission',
-              },
-            );
-            // If WRITE_EXTERNAL_STORAGE Permission is granted
-            return granted === PermissionsAndroid.RESULTS.GRANTED;
-          } catch (err) {
-            console.warn(err);
-            alert('Write permission err', err);
-          }
-          return false;
+            try {
+                const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+                    {
+                        title: 'External Storage Write Permission',
+                        message: 'App needs write permission',
+                    },
+                );
+                // If WRITE_EXTERNAL_STORAGE Permission is granted
+                return granted === PermissionsAndroid.RESULTS.GRANTED;
+            } catch (err) {
+                console.warn(err);
+                alert('Write permission err', err);
+            }
+            return false;
         } else return true;
-      };
-    
-      const chooseFile = async (type) => {
+    };
+
+    const chooseFile = async (type) => {
         let options = {
-          mediaType: type,
-          maxWidth: 300,
-          maxHeight: 550,
-          quality: 1,
+            mediaType: type,
+            maxWidth: 300,
+            maxHeight: 550,
+            quality: 1,
         };
         let isStoragePermitted = await requestExternalWritePermission();
         if (isStoragePermitted) {
-        launchImageLibrary(options, (response) => {
-          setFilePath(response);
-          console.log(response);
-        })}
-      };
+            launchImageLibrary(options, (response) => {
+                setFilePath(response);
+            })
+        }
+    };
+
+    useEffect(() => {
+        if (filePath !== "") {
+            console.log(uri)
+            //uploadImage();
+        }
+    }, [filePath])
+
+    const uploadImage = async () => {
+        const uid = user.uid;
+        const uploadTask = await Firebase.storage()
+        .ref(`images/${uid}/${uri}`)
+        .put(uri);
+    }
 
     return (
         <View style={styles.background}>
             <View style={styles.profileContainerPhoto}>
                 {filePath === "" ? (
-                    <Image style={styles.profilePhoto} source={{uri: "https://www.construtoracesconetto.com.br/wp-content/uploads/2020/03/blank-profile-picture-973460_640.png" }} />
-                ):(
-                <Image style={styles.profilePhoto} source={{uri: `${filePath.uri}`}} />
+                    <Image style={styles.profilePhoto} source={{ uri: "https://www.construtoracesconetto.com.br/wp-content/uploads/2020/03/blank-profile-picture-973460_640.png" }} />
+                ) : (
+                    <Image style={styles.profilePhoto} source={{ uri: `${filePath.uri}` }} />
                 )}
                 <TouchableOpacity style={styles.positionIcon}
-                onPress={() =>chooseFile('photo')}>
+                    onPress={() => chooseFile('photo')}>
                     {/* <View style={{width:'30%'}}></View> */}
                     <Icon name="create-outline" size={20} color="#343438" />
                 </TouchableOpacity>
