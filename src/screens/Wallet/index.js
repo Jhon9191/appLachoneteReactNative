@@ -9,11 +9,12 @@ import Firebase from '../../services/firebase';
 
 import styles from './styles.js';
 import WalletListItem from '../../components/WalletListItem'
+import { set } from 'date-fns/esm';
 
 export default function Wallet() {
     const { dataPedido, user, confirmarPedido, setDataPedidoCliente } = useContext(AuthContext);
     const navigation = useNavigation();
-    
+    const [valorTotal, setValorTotal] = useState("");
 
     const handleCreatePedido =  async () =>{
         let uid = await Firebase.auth().currentUser.uid;
@@ -21,7 +22,7 @@ export default function Wallet() {
         Firebase.database().ref("Pedidos").child(user.uid).child(key).set({
             lanches: {dataPedido}
         }).then(()=>{
-            console.log("Pedido feito")
+            //console.log("Pedido feito")
             confirmarPedido()
         })
     }
@@ -31,11 +32,12 @@ export default function Wallet() {
     },[]);
 
     useEffect(() => {
+       
     }, [dataPedido]);
 
     return (
         <View style={styles.background}>
-
+        
             { dataPedido.length == 0
                 ?
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -48,21 +50,10 @@ export default function Wallet() {
                             color="#E98000"
                         />
                     </View>
-
-                    <TouchableOpacity
-                        style={styles.buttonVoltar}
-                        onPress={() => navigation.navigate("Home")}>
-                        <Icon
-                            name="arrow-left"
-                            size={20}
-                            color="#E98000"
-                        />
-                        <Text style={styles.textVoltar}>Voltar</Text>
-                    </TouchableOpacity>
                 </View>
                 :
                 <View style={styles.container}>
-
+<Text>{valorTotal}</Text>
                     <View style={styles.pedidos}>
                         <View style={{ padding: 4 }}>
                             <FlatList
@@ -75,16 +66,7 @@ export default function Wallet() {
 
 
                     <View style={{ width: '100%', flexDirection: "row", justifyContent: 'space-evenly' }}>
-                        <TouchableOpacity
-                            style={styles.buttonVoltar}
-                            onPress={() => navigation.navigate("Home")}>
-                            <Icon
-                                name="arrow-left"
-                                size={20}
-                                color="#E98000"
-                            />
-                            <Text style={styles.textVoltar}>Voltar</Text>
-                        </TouchableOpacity>
+    
 
                         <TouchableOpacity 
                             onPress={handleCreatePedido}

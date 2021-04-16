@@ -54,7 +54,17 @@ function appRoutes(){
         <Stack.Navigator >
             <Stack.Screen options={{headerShown: false}} name="Home" component={Home}/>
             <Stack.Screen options={{headerShown: false}} name="Cardapio" component={Requests}/>
-            <Stack.Screen options={{headerShown: false}} name="Carteira" component={Wallet}/>
+            <Stack.Screen options={{headerShown: true, headerStyle:{
+                backgroundColor: "#fff",
+                elevation: 0,
+                borderBottomWidth: 4,
+                borderBottomColor: "#fff"
+            },
+                headerTintColor: "#E98000",
+                headerTitle: "Cesta",
+                headerBackTitleVisible: false
+                
+            }} name="Carteira" component={Wallet}/>
             <Stack.Screen options={{headerShown: true, headerStyle:{
                 backgroundColor: "#fff",
                 elevation: 0,
