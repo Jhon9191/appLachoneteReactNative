@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, Switch } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -22,6 +22,24 @@ export default function menuItens({ data }) {
         setPrice(data.price);
         setVisible(true);
     }
+    useEffect(()=>{
+        if(queijo == true){
+            setPrice(parseFloat(price)+2)
+        }
+        if(queijo == false){
+            setPrice(parseFloat(price)-2)
+        }
+    },[queijo])
+
+    useEffect(()=>{
+        if(bife == true){
+            setPrice(parseFloat(price)+2)
+        }
+        if(bife == false){
+            setPrice(parseFloat(price)-2)
+        }
+        
+    },[bife])
 
     function closeModal() {
         setVisible(false);
@@ -48,7 +66,7 @@ export default function menuItens({ data }) {
         let dadosPedido = {
             key: contador,
             nome: lanche,
-            preco: parseFloat(price) + queijoValue + bifeValue,
+            preco: price,
             acrecimos: acrecimos
         }
         addNovoPedido(dadosPedido);

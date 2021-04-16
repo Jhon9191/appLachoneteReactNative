@@ -61,8 +61,7 @@ const styles = StyleSheet.create({
     botoesFuncoes:{
         height: "10%",
         flexDirection: "row",
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'space-between',
     },
 
     itensList:{
