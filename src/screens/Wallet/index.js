@@ -12,7 +12,7 @@ import WalletListItem from '../../components/WalletListItem'
 import { set } from 'date-fns/esm';
 
 export default function Wallet() {
-    const { dataPedido, user, confirmarPedido, setDataPedidoCliente } = useContext(AuthContext);
+    const { dataPedido, user, confirmarPedido, setDataPedidoCliente, v } = useContext(AuthContext);
     const navigation = useNavigation();
     const [valorTotal, setValorTotal] = useState("");
 
@@ -53,8 +53,8 @@ export default function Wallet() {
                 </View>
                 :
                 <View style={styles.container}>
-<Text>{valorTotal}</Text>
                     <View style={styles.pedidos}>
+                    <Text>{v}</Text>
                         <View style={{ padding: 4 }}>
                             <FlatList
                                 showsVerticalScrollIndicator={false}

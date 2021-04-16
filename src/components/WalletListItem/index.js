@@ -25,7 +25,7 @@ export default function WalletListItem({ data }) {
                     <Text>Acréscimos: </Text>
                     <Text>{data.acrecimos.bife == true ? "Bife: Sim" : "Bife: Não"}</Text>
                     <Text>{data.acrecimos.queijo == true ? "Queijo: Sim" : "Queijo: Não"}</Text>
-                    {console.log(data)}
+                   
                 </View>
 
                 {route.name == "Carteira" ? (

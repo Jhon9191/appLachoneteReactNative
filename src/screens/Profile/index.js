@@ -95,7 +95,7 @@ export default function Profile() {
 
     useEffect(() => {
         if (filePath !== "") {
-            console.log(uri)
+            //console.log(uri)
             //uploadImage();
         }
     }, [filePath])

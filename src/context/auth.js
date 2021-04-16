@@ -11,7 +11,7 @@ function authProvider({ children }) {
     const [dataPedido, setDataPedidos] = useState([]);
 
     const [total, setTotal] = useState([]);
-    const [v, setV] = useState();
+    const [v, setV] = useState(0);
 
     const [dataPedidoCliente, setDataPedidoCliente] = useState(null);
 
@@ -83,33 +83,31 @@ function authProvider({ children }) {
             setUser(null);
         })
     }
-
-    async function porValor(){
-    }
     
-    useEffect(()=>{
-        let i = 0;
-        dataPedido.map(valor =>{
-            i += parseFloat(valor.preco);
-        });
-        setV(i);
-    },[dataPedido]);
-
+    
     function addPedido(data){
         setDataPedidos([...dataPedido, data]);
+        setV(v + parseFloat(data.preco));
     }
-
+    
     async function removeItem(item){ 
         setDataPedidos(dataPedido.filter(p => p !==item));
+       setV(v - parseFloat(item.preco));
     }
 
+    // useEffect(()=>{
+    //     //setV(0); 
+    //     dataPedido.map(valor =>{
+    //         //setV(v+ parseFloat(valor.preco));
+    //     });
+    // },[dataPedido]);
+    
     const confirmarPedido = () => {
         setDataPedidos([]);
     }
 
     return (
         <AuthContext.Provider value={{
-            porValor, 
             dataPedido, 
             signed: !!user, 
             user, 
@@ -123,7 +121,8 @@ function authProvider({ children }) {
             dataPedidoCliente, 
             setDataPedidoCliente,
             storageUser,
-            setUser
+            setUser,
+            v
             }}>
             {children}
         </AuthContext.Provider>
