@@ -43,10 +43,12 @@ export default function menuItens({ data }) {
 
     function closeModal() {
         setVisible(false);
+        
     }
 
     function addNovoPedido(dataLocal) {
         addPedido(dataLocal);
+        
     }
 
     function confirmarPedido() {

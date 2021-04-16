@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     acrecimosWindow: {
         width: "90%", 
         height: 600,
-        borderRadius: 40,
+        borderRadius: 15,
         backgroundColor: "#FFFFFF", 
         justifyContent: "center", 
         alignItems: 'center',
@@ -59,9 +59,10 @@ const styles = StyleSheet.create({
     },
 
     botoesFuncoes:{
+        width: '100%',
         height: "10%",
         flexDirection: "row",
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
     },
 
     itensList:{
@@ -84,21 +85,21 @@ const styles = StyleSheet.create({
     },
 
     botaoClose:{
-        backgroundColor: "#FF2800",
+        //backgroundColor: "#FF2800",
         padding: 10,
         borderRadius: 20,
         margin: 10
     },textClose:{
-        color:"#FFFFFF",
+        color:"#FF2800",
     },
 
     botaoConfirmar:{
-        backgroundColor: "#32CD32",
+        //backgroundColor: "#32CD32",
         padding: 10,
         borderRadius: 20,
         margin: 10
     },textConfirmar:{
-        color:"#FFFFFF",
+        color:"#32CD32",
     },
 
 
