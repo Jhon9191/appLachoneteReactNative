@@ -21,12 +21,15 @@ export default function Home() {
     ]);
 
     useEffect(()=>{
-        setDataPedidoCliente(null);
-        if(hora >= 6 && hora < 12){
+        setDataPedidoCliente();
+        console.log(new Date().getHours())
+        if(hora > 0 && hora < 6 ){
+            setMensagem(`Boa madrugada ${user.nome}!`)
+        }else if(hora >= 6 && hora < 12){
             setMensagem(`Bom dia ${user.nome}!`)
         }else if ( hora >= 12 && hora < 18){
             setMensagem(`Boa tarde ${user.nome}!`)
-        }else if ( hora >= 18){
+        }else if ( hora <6 && hora >= 18 ){
             setMensagem(`Boa noite ${user.nome}!`)
         }
     },[user])

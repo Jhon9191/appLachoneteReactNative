@@ -95,13 +95,6 @@ function authProvider({ children }) {
        setV(v - parseFloat(item.preco));
     }
 
-    // useEffect(()=>{
-    //     //setV(0); 
-    //     dataPedido.map(valor =>{
-    //         //setV(v+ parseFloat(valor.preco));
-    //     });
-    // },[dataPedido]);
-    
     const confirmarPedido = () => {
         setDataPedidos([]);
     }
