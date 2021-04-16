@@ -43,12 +43,14 @@ export default function menuItens({ data }) {
 
     function closeModal() {
         setVisible(false);
-        
+        setQueijo(false);
+        setBife(false);
     }
 
     function addNovoPedido(dataLocal) {
         addPedido(dataLocal);
-        
+        setQueijo(false);
+        setBife(false);
     }
 
     function confirmarPedido() {
