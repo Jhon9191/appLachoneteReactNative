@@ -150,6 +150,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
 
+    valorPedido:{
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: "#E98000"
+    },
+
 });
 
 export default styles;

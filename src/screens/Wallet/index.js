@@ -9,7 +9,6 @@ import Firebase from '../../services/firebase';
 
 import styles from './styles.js';
 import WalletListItem from '../../components/WalletListItem'
-import { set } from 'date-fns/esm';
 
 export default function Wallet() {
     const { dataPedido, user, confirmarPedido, setDataPedidoCliente, v } = useContext(AuthContext);
@@ -62,7 +61,8 @@ export default function Wallet() {
                 :
                 <View style={styles.container}>
                     <View style={styles.pedidos}>
-                        <Text>{v}</Text>
+
+
 
                         <Modal
                             transparent={true}
@@ -70,15 +70,15 @@ export default function Wallet() {
                             visible={visible}>
                             <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
                                 <View style={styles.acrecimosWindow}>
-                                   
-                                        <View style={styles.botoesFuncoes}>
 
-                                            <TouchableOpacity style={styles.botaoClose} onPress={closeModal}>
-                                                <Text style={styles.textClose}>Cancelar</Text>
-                                            </TouchableOpacity>
-                                            <TouchableOpacity style={styles.botaoConfirmar} onPress={handleCreatePedido}>
-                                                <Text style={styles.textConfirmar}>Confirmar</Text>
-                                            </TouchableOpacity>
+                                    <View style={styles.botoesFuncoes}>
+
+                                        <TouchableOpacity style={styles.botaoClose} onPress={closeModal}>
+                                            <Text style={styles.textClose}>Cancelar</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity style={styles.botaoConfirmar} onPress={handleCreatePedido}>
+                                            <Text style={styles.textConfirmar}>Confirmar</Text>
+                                        </TouchableOpacity>
 
                                     </View>
                                 </View>
@@ -92,6 +92,9 @@ export default function Wallet() {
                                 data={dataPedido}
                                 keyExtractor={item => item.key.toString()}
                                 renderItem={({ item }) => (<WalletListItem data={item} />)} />
+                            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                                <Text style={styles.valorPedido}>Total R$: {v.toFixed(2)} reais</Text>
+                            </View>
                         </View>
                     </View>
 
