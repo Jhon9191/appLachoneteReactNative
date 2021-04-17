@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        tintColor: '#FFFFFF',
+        tintColor: '#1F1F1F',
         width: 100,
         height: 100
     },
@@ -21,10 +21,13 @@ const styles = StyleSheet.create({
         padding: 5 ,
         width: 300,
         height: 50,
-        color: '#fff',
-        backgroundColor: "#000000",
+        color: '#1F1F1F',
+        borderWidth: 1,
+        //backgroundColor: "#fff",
         opacity: 0.85,
-        borderRadius: 10,
+        paddingStart: 15,
+        borderColor: "#1F1F1F",
+        borderRadius: 50,
         margin: 5
     },
 
@@ -32,8 +35,9 @@ const styles = StyleSheet.create({
         margin: 5,
         width: 300,
         height: 50,
-        backgroundColor: "#ccb600",
-        borderRadius: 10,
+        opacity: 1,
+        backgroundColor: "#fff000",
+        borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -62,7 +66,8 @@ const styles = StyleSheet.create({
 
     re: {
         flex: 1,
-        flexDirection: "column"
+        flexDirection: "column",
+        backgroundColor: "#fff"
     }
 
 });

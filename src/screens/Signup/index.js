@@ -20,13 +20,13 @@ export default function signin() {
   return (
     <View style={styles.re}>
 
-      <ImageBackground source={imagem} style={styles.walp} >
+      {/* <ImageBackground source={imagem} style={styles.walp} > */}
         <View style={styles.background}>
           <Image style={styles.image} source={require('../../assets/logoLanche.png')} />
 
           <TextInput style={styles.input}
             placeholder="Nome"
-            placeholderTextColor="#fff"
+            placeholderTextColor="#1F1F1F"
             autoCorrect={false}
             value={name}
             onChangeText={(text) => setName(text)}
@@ -34,7 +34,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
             placeholder="Email"
-            placeholderTextColor="#fff"
+            placeholderTextColor="#1F1F1F"
             autoCapitalize="none"
             tvParallaxShiftDistanceY={26}
             autoCorrect={false}
@@ -44,7 +44,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
             placeholder="Password"
-            placeholderTextColor="#fff"
+            placeholderTextColor="#1F1F1F"
             autoCorrect={false}
             value={senha}
             onChangeText={(text) => setSenha(text)}
@@ -53,7 +53,7 @@ export default function signin() {
 
           <TextInput style={styles.input}
             placeholder="Password"
-            placeholderTextColor="#fff"
+            placeholderTextColor="#1F1F1F"
             autoCorrect={false}
             value={senhaIgual}
             onChangeText={(text) => setSenhaIgual(text)}
@@ -65,7 +65,7 @@ export default function signin() {
 
 
         </View>
-      </ImageBackground>
+      {/* </ImageBackground> */}
 
     </View>
   );
