@@ -99,7 +99,56 @@ const styles = StyleSheet.create({
     },textEmpty:{
         fontSize: 26,
         fontWeight:'bold'
-    }
+    },
+
+    acrecimosWindow: {
+        width: "80%", 
+        height: 150,
+        borderRadius: 15,
+        backgroundColor: "#FFF", 
+        justifyContent: "center", 
+        alignItems: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.50,
+        shadowRadius: 6.68,
+        elevation: 5,
+    },
+
+    opcoes:{
+        height: "85%"
+    },
+
+    botoesFuncoes:{
+        width: '100%',
+        height: "50%",
+        flexDirection: "row",
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
+    },
+
+    botaoClose:{
+        backgroundColor: "#FF2800",
+        padding: 10,
+        borderRadius: 4,
+        margin: 10
+    },textClose:{
+        color:"#FFF",
+        fontWeight: 'bold'
+    },
+
+    botaoConfirmar:{
+        backgroundColor: "#32CD32",
+        padding: 10,
+        borderRadius: 4,
+        margin: 10
+    },textConfirmar:{
+        color:"#FFF",
+        fontWeight: 'bold'
+    },
 
 });
 

@@ -97,6 +97,7 @@ function authProvider({ children }) {
 
     const confirmarPedido = () => {
         setDataPedidos([]);
+        setV(0);
     }
 
     return (
