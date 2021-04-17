@@ -20,7 +20,7 @@ export default function signin() {
   return (
     <View style={styles.re}>
 
-      <ImageBackground source={imagem} style={styles.walp} >
+      {/* <ImageBackground source={imagem} style={styles.walp} > */}
         <View style={styles.background}>
           <Image style={styles.image} source={require('../../assets/logoLanche.png')} />
 
@@ -49,7 +49,7 @@ export default function signin() {
             <Text style={styles.buttonCadastrar}>Cadastre-se agora!</Text>
           </TouchableOpacity>
         </View>
-      </ImageBackground>
+      {/* </ImageBackground> */}
 
     </View>
   );
