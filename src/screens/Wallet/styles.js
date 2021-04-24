@@ -156,6 +156,16 @@ const styles = StyleSheet.create({
         color: "#E98000"
     },
 
+    itensList:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row'
+    },itenListText:{
+        fontSize: 20,
+        fontWeight: 'bold',
+    } , 
+
+
 });
 
 export default styles;
