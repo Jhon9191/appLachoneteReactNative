@@ -25,14 +25,16 @@ export default function Wallet() {
     const [pagamentoCartao, setPagamentoCartao] = useState(false);
 
     const handleCreatePedido = async () => {
-        let uid = await Firebase.auth().currentUser.uid;
-        let key = await Firebase.database().ref('Pedidos').child(user.uid).push().key;
-        Firebase.database().ref("Pedidos").child(user.uid).child(key).set({
-            lanches: { dataPedido }
-        }).then(() => {
-            //console.log("Pedido feito")
-            confirmarPedido()
-        })
+        if(pagamentoDinheiro == true || pagamentoCartao == true){
+            let uid = await Firebase.auth().currentUser.uid;
+            let key = await Firebase.database().ref('Pedidos').child(user.uid).push().key;
+            Firebase.database().ref("Pedidos").child(user.uid).child(key).set({
+                lanches: { dataPedido }
+            }).then(() => {
+                //console.log("Pedido feito")
+                confirmarPedido()
+            })
+        }
     }
 
     useEffect(() => {
