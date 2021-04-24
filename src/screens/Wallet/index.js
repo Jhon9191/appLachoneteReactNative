@@ -23,6 +23,7 @@ export default function Wallet() {
     const [visible, setVisible] = useState(false);
     const [pagamentoDinheiro, setPagamentoDinheiro] = useState(false);
     const [pagamentoCartao, setPagamentoCartao] = useState(false);
+    const [alert, setAlert] = useState(false)
 
     const handleCreatePedido = async () => {
         if(pagamentoDinheiro == true || pagamentoCartao == true){
@@ -34,6 +35,8 @@ export default function Wallet() {
                 //console.log("Pedido feito")
                 confirmarPedido()
             })
+        }else{
+            setAlert(true)
         }
     }
 
@@ -44,12 +47,14 @@ export default function Wallet() {
     useEffect(() => {
         if(pagamentoDinheiro == true){
             setPagamentoCartao(false)
+            setAlert(false)
         }
     }, [pagamentoDinheiro]);
 
     useEffect(() => {
         if(pagamentoCartao == true){
             setPagamentoDinheiro(false)
+            setAlert(false)
         }
     }, [pagamentoCartao]);
 
@@ -91,7 +96,12 @@ export default function Wallet() {
                             <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
                                 <View style={styles.acrecimosWindow}>
                                     <Text style={styles.valorPedido}>Total R$: {v.toFixed(2)} reais</Text>
-
+                                    {alert === true && (
+                                    <View style={{flexDirection: 'row'}}>
+                                        <Icon name="exclamation-circle" size={25} color="#ff0000" />
+                                        <Text style={styles.alert}>Informe um tipo de pagamento!</Text>
+                                    </View>
+                                    )}
                                     <View style={styles.itensList}>
                                         <Text style={styles.itenListText}>Dinheiro</Text>
                                         <Switch

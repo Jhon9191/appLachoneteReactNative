@@ -165,6 +165,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     } , 
 
+    alert:{
+        marginStart: 5,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: "#ff0000"
+    }
 
 });
 
