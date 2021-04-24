@@ -21,21 +21,26 @@ export default function Wallet() {
     const navigation = useNavigation();
     const [valorTotal, setValorTotal] = useState("");
     const [visible, setVisible] = useState(false);
+    const [tipoDePagamento, setTipoDePagamento] = useState("");
     const [pagamentoDinheiro, setPagamentoDinheiro] = useState(false);
     const [pagamentoCartao, setPagamentoCartao] = useState(false);
     const [alert, setAlert] = useState(false)
 
     const handleCreatePedido = async () => {
-        if(pagamentoDinheiro == true || pagamentoCartao == true){
+        console.log(tipoDePagamento)
+        if(tipoDePagamento !== ""){
             let uid = await Firebase.auth().currentUser.uid;
             let key = await Firebase.database().ref('Pedidos').child(user.uid).push().key;
             Firebase.database().ref("Pedidos").child(user.uid).child(key).set({
-                lanches: { dataPedido }
+                lanches: {dataPedido},
+                tipoDePagamento: tipoDePagamento
             }).then(() => {
                 //console.log("Pedido feito")
                 confirmarPedido()
+                setPagamentoDinheiro("");
             })
         }else{
+            setPagamentoDinheiro("");
             setAlert(true)
         }
     }
@@ -47,6 +52,7 @@ export default function Wallet() {
     useEffect(() => {
         if(pagamentoDinheiro == true){
             setPagamentoCartao(false)
+            setTipoDePagamento("Dinheiro")
             setAlert(false)
         }
     }, [pagamentoDinheiro]);
@@ -54,6 +60,7 @@ export default function Wallet() {
     useEffect(() => {
         if(pagamentoCartao == true){
             setPagamentoDinheiro(false)
+            setTipoDePagamento("Cartao")
             setAlert(false)
         }
     }, [pagamentoCartao]);
